@@ -13,23 +13,23 @@
 </head>
 	<html>
 		<body class="preload">
-			<div class="wrapper">
+			<div class="wrapper <?php echo ( isset( $img ) ? '' : 'no-img' ); ?>">
 
 				<div class="header">
 					<ul class="nav">
 						<?php if( empty( $start ) ) : ?>
 							<li>
-								<a href="/">Home</a>
+								<a href="/">Start</a>
 							</li>
 						<?php endif; ?>
 						<li>
 							<a href="/stories.php">Stories</a>
 						</li>
 						<li>
-							<a href="#">About me</a>
+							<a href="/about.php">About me</a>
 						</li>
 						<li>
-							<a href="#">Contact</a>
+							<a href="/contact.php">Contact</a>
 						</li>
 					</ul>
 

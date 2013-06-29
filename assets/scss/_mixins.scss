@@ -38,6 +38,17 @@
 }
 
 @mixin clearfix() {
-	overflow: hidden;
-	*zoom: 1;
+	.clearfix:before,
+	.clearfix:after {
+	    content: " "; /* 1 */
+	    display: table; /* 2 */
+	}
+
+	.clearfix:after {
+	    clear: both;
+	}
+
+	.clearfix {
+	    *zoom: 1;
+	}
 }
