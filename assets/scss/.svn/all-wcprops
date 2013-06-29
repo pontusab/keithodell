@@ -1,0 +1,113 @@
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/!svn/ver/17873/coop/coop.se/site/trunk/ui/design/scss
+END
+_mixins.scss
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/!svn/ver/17870/coop/coop.se/site/trunk/ui/design/scss/_mixins.scss
+END
+_variables.scss
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/!svn/ver/17873/coop/coop.se/site/trunk/ui/design/scss/_variables.scss
+END
+_functions.scss
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/!svn/ver/16068/coop/coop.se/site/trunk/ui/design/scss/_functions.scss
+END
+login.scss
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/!svn/ver/17625/coop/coop.se/site/trunk/ui/design/scss/login.scss
+END
+_base.scss
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/!svn/ver/15977/coop/coop.se/site/trunk/ui/design/scss/_base.scss
+END
+_scaffolding.scss
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/!svn/ver/17869/coop/coop.se/site/trunk/ui/design/scss/_scaffolding.scss
+END
+dev.scss
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/!svn/ver/15943/coop/coop.se/site/trunk/ui/design/scss/dev.scss
+END
+screen.scss
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/!svn/ver/16911/coop/coop.se/site/trunk/ui/design/scss/screen.scss
+END
+basic.scss
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/!svn/ver/17740/coop/coop.se/site/trunk/ui/design/scss/basic.scss
+END
+_reset.scss
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/!svn/ver/15068/coop/coop.se/site/trunk/ui/design/scss/_reset.scss
+END
+components.scss
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/!svn/ver/16959/coop/coop.se/site/trunk/ui/design/scss/components.scss
+END
+_coopglyphs.scss
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/!svn/ver/16830/coop/coop.se/site/trunk/ui/design/scss/_coopglyphs.scss
+END
+_sprites.scss
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/!svn/ver/15788/coop/coop.se/site/trunk/ui/design/scss/_sprites.scss
+END
+_fonts.scss
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/!svn/ver/16679/coop/coop.se/site/trunk/ui/design/scss/_fonts.scss
+END
+_print.scss
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/!svn/ver/17813/coop/coop.se/site/trunk/ui/design/scss/_print.scss
+END
+_patterns.scss
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/!svn/ver/17872/coop/coop.se/site/trunk/ui/design/scss/_patterns.scss
+END
+_global.scss
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/!svn/ver/17873/coop/coop.se/site/trunk/ui/design/scss/_global.scss
+END
+readme.txt
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/!svn/ver/15103/coop/coop.se/site/trunk/ui/design/scss/readme.txt
+END

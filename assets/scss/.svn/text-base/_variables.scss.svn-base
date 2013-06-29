@@ -1,0 +1,178 @@
+// Start: Colors
+$color-green-1: #14ab30;
+$color-green-2: #00a652;
+$color-green-3: #487034;
+$color-green-4: #b8cd34;
+$color-green-5: #cde199;
+$color-green-6: #eff1ec;
+$color-green-7: #e6f0cc;
+$color-green-8: #5a7e48;
+$color-red: #ed1b24;
+$color-pink: #f26f81;
+$color-pink-2: #fce2e6;
+$color-purple: #633c5b;
+$color-blue-1: #6ecde9;
+$color-blue-2: #004e86;
+$color-yellow: #fedc00;
+$color-yellow-2: #f6efb4;
+$color-yellow-3: #fe9820;
+$color-brown: #6e4319;
+$color-gray-1: #3b3b3b;
+$color-gray-2: #616161;
+$color-gray-3: #dddddd;
+$color-gray-4: #e5e5e5;
+$color-gray-5: #f3f5f0;
+$color-gray-6: #777777;
+$color-gray-7: #8b8b8b;
+$color-gray-8: #e8eae5;
+$color-white: #ffffff;
+$color-blueprint: #0cdaed;
+$color-lime-green: #b8cd33;
+$color-turquoise: #88c5c2;
+// End: Colors
+
+$color-background: $color-gray-5;
+$color-text: $color-gray-1;
+$color-link: $color-green-2;
+$color-link-active: $color-pink;
+$color-null: $color-white;
+$color-footer: $color-green-6;
+
+// Dimension
+$hud-width: 55px;
+$hud-static-width: 220px;
+
+// Vendor prefixes
+$default-prefixes: -webkit -moz -ms;
+
+// Typography
+$base_font_size: 14;
+$sans-serif: Akkurat, "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+// Button themes
+$button-themes:
+	brown
+	green
+	blue
+	black
+	pink
+	purple
+	silver
+	yellow;
+$button-bg-colors:
+	$color-brown
+	$color-green-3
+	$color-blue-2
+	$color-gray-1
+	$color-pink
+	$color-purple
+	$color-gray-4
+	$color-yellow-3;
+
+// Mod themes
+$mod-themes:
+	brown
+	green
+	blue
+	black
+	pink;
+$mod-button-themes:
+	brown
+	green
+	blue
+	black
+	brown;
+$mod-header-bg-colors:
+	$color-brown
+	$color-green-4
+	$color-blue-1
+	$color-gray-2
+	$color-pink;
+$mod-filled-header-h1-colors:
+	$color-white
+	$color-green-3
+	$color-blue-2
+	$color-white
+	$color-brown;
+$mod-two-tone-header-h1-colors:
+	$color-pink
+	$color-green-4
+	$color-blue-1
+	$color-gray-2
+	$color-brown;
+$mod-two-tone-header-h2-colors:
+	$color-brown
+	$color-green-3
+	$color-blue-2
+	$color-gray-1
+	$color-pink;
+$mod-header-heading-text-shadow-colors:
+	rgba(0, 0, 0, 0.3)
+	rgba(255, 255, 255, 0.3)
+	rgba(255, 255, 255, 0.3)
+	rgba(0, 0, 0, 0.3)
+	rgba(255, 255, 255, 0.3);
+
+// Slide themes
+$slide-themes:
+	brown-on-dark
+	brown-on-light
+	green-on-dark
+	green-on-light
+	blue-on-dark
+	blue-on-light
+	black-on-dark
+	black-on-light;
+$slide-bg-colors:
+	lighten($color-brown, 30%)
+	lighten($color-brown, 30%)
+	lighten($color-green-3, 30%)
+	lighten($color-green-3, 30%)
+	lighten($color-blue-2, 30%)
+	lighten($color-blue-2, 30%)
+	lighten($color-gray-1, 30%)
+	lighten($color-gray-1, 30%);
+$slide-h1-colors:
+	$color-brown
+	#f26e81
+	$color-lime-green
+	$color-lime-green
+	#6ecde8
+	#6ecde8
+	#747474
+	$color-gray-1;
+$slide-h2-colors:
+	$color-white
+	$color-brown
+	$color-white
+	$color-green-3
+	$color-white
+	$color-blue-2
+	$color-white
+	#747474;
+$slide-p-colors:
+	$color-white
+	$color-brown
+	$color-white
+	$color-green-3
+	$color-white
+	$color-blue-2
+	$color-white
+	#747474;
+$slide-button-themes:
+	brown
+	brown
+	green
+	green
+	blue
+	blue
+	black
+	black;
+
+$chart-colors:
+	$color-green-4
+	$color-pink
+	$color-brown
+	$color-purple
+	$color-yellow
+	$color-blue-1

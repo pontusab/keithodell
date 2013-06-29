@@ -1,0 +1,119 @@
+@mixin icon($sprite, $name) {
+	background: sprite($sprite, $name);
+	display: block;
+	height: sprite-height($sprite, $name);
+	width: sprite-width($sprite, $name);
+}
+
+@mixin rem($size, $rule: 'font-size') {
+	#{$rule}: #{$size * 16}px;
+	#{$rule}: #{$size}rem;
+}
+
+@mixin prefixr($property, $value, $prefixes: $default-prefixes) {
+	$property: unquote($property);
+
+	@if $property == box-shadow {
+		#{$property}: #{$value};
+	} @else if $property == border-radius {
+		#{$property}: #{$value};
+	} @else if $property == text-shadow {
+		#{$property}: #{$value};
+	} @else {
+		@each $prefix in $prefixes {
+			#{$prefix}-#{$property}: #{$value};
+		}
+		#{$property}: #{$value};
+	}
+
+	@if $property == box-flex {
+		-ms-flex: #{$value} auto;
+		flex: #{$value} auto;
+	}
+}
+
+@mixin prefixr-value($property, $value, $prefixes: $default-prefixes) {
+	$property : unquote($property);
+	$value    : unquote($value);
+
+	// Loop through the prefixes given
+	@each $prefix in $prefixes {
+		#{$property}:#{$prefix}-#{$value};
+	}
+	#{$property}:#{$value};
+}
+
+@mixin opacity($opacity: 1) {
+	opacity: $opacity;
+	-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=#{$opacity * 100})";
+	filter: alpha(opacity=#{$opacity * 100});
+}
+
+@mixin breakpoint-flag($bp) {
+	content: 'BP: ' + $bp;
+	position: fixed;
+	left: 49%;
+	bottom: 0;
+	background: $color-blueprint;
+	color: #444;
+	font-size: 12px;
+	padding: .25em;
+	z-index: 1000;
+}
+
+@mixin clearfix() {
+	overflow: hidden;
+	*zoom: 1;
+}
+
+@mixin generic-link() {
+	border-bottom: 1px solid #cecece;
+	color: $color-green-3;
+	text-decoration: none;
+
+	&:hover {
+		text-decoration: none;
+		color: $color-green-1;
+		border-bottom-color: $color-green-1;
+	}
+}
+
+@mixin CoopNew() {
+	font-family: CoopNew, sans-serif;
+	-webkit-font-smoothing: antialiased;
+}
+
+@mixin flexbox($direction) {
+	@if ($direction == column) {
+		$direction:
+			column
+			vertical;
+	} @else {
+		$direction:
+			row,
+			horizontal;
+	}
+
+	display: -webkit-box;
+	-webkit-box-orient: nth($direction, 2);
+	-webkit-box-pack: center;
+
+	display: -moz-box;
+	-moz-box-orient: nth($direction, 2);
+	-moz-box-pack: center;
+
+	display: -ms-box;
+	-ms-box-orient: nth($direction, 2);
+	-ms-box-pack: center;
+
+	display: -ms-flexbox;
+	-ms-flex-direction: nth($direction, 1);
+	-ms-flex-pack: center;
+
+	display: box;
+	box-orient: nth($direction, 2);
+	box-pack: center;
+
+	flex-direction: nth($direction, 1);
+	flex-pack: center;
+}

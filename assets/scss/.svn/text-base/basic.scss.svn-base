@@ -1,0 +1,45 @@
+@charset "UTF-8";
+/*
+	Title: Basic basic stylesheet
+	Description: for less capable browsers (smartphones, legacy browsers etc) and printers
+	Author: Daytona
+
+*/
+@import "base";
+
+body {
+	font-family: Arial, sans-serif;
+	text-align: left;
+	color: #333;
+	padding: 0 8px 0 8px;
+}
+
+/* Hide page until everything has loaded */
+html.js {
+	body { visibility: hidden; }
+
+	&.no-enhanced body { visibility: visible; }
+}
+
+
+/*links */
+a:link { @include generic-link(); }
+a img { border: 0; }
+
+/* forms */
+input.text,textarea { display: block; }
+span.required { color:red; }
+
+.logo.high-res { display: none; }
+.logo.low-res {
+	display: block;
+	background: #000;
+	border: 6px solid #000;
+}
+
+/* ---------------------------------------------------------------
+Print-only styles
+--------------------------------------------------------------- */
+@media print {
+	@import "print";
+}

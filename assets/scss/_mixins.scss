@@ -1,0 +1,43 @@
+@mixin prefixr($property, $value, $prefixes: $default-prefixes) {
+	$property: unquote($property);
+
+	@if $property == box-shadow {
+		#{$property}: #{$value};
+	} @else if $property == border-radius {
+		#{$property}: #{$value};
+	} @else if $property == text-shadow {
+		#{$property}: #{$value};
+	} @else {
+		@each $prefix in $prefixes {
+			#{$prefix}-#{$property}: #{$value};
+		}
+		#{$property}: #{$value};
+	}
+
+	@if $property == box-flex {
+		-ms-flex: #{$value} auto;
+		flex: #{$value} auto;
+	}
+}
+
+@mixin prefixr-value($property, $value, $prefixes: $default-prefixes) {
+	$property : unquote($property);
+	$value    : unquote($value);
+
+	// Loop through the prefixes given
+	@each $prefix in $prefixes {
+		#{$property}:#{$prefix}-#{$value};
+	}
+	#{$property}:#{$value};
+}
+
+@mixin opacity($opacity: 1) {
+	opacity: $opacity;
+	-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=#{$opacity * 100})";
+	filter: alpha(opacity=#{$opacity * 100});
+}
+
+@mixin clearfix() {
+	overflow: hidden;
+	*zoom: 1;
+}

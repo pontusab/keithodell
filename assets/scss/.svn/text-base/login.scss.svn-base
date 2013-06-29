@@ -1,0 +1,262 @@
+@charset "UTF-8";
+
+/* Screen styles
+ * Master stylesheet to be included for the fully enhanced view.
+ * Import this file using the following HTML or equivalent:
+ * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+
+// Global variables, defaults and custom mixins
+@import "base";
+// Fonts
+@import "fonts";
+
+@import "reset";
+
+$gutter_px: 20px;
+
+@import  "components/buttons";
+
+/* Document setup
+--------------------------------------------- */
+
+body {
+	height: span(12);
+	padding: 0;
+	color: $color-text;
+	font-size: 87.5%;
+	font-family: $sans-serif;
+	line-height: 1.4;
+	background: #fff;
+
+	@include prefixr(transition, opacity 150ms ease-out);
+	opacity: 0;
+
+	.enhanced & { opacity: 1; }
+
+	// Nasty fix for iOS 5 overflow scrolling
+	-webkit-transform: translateZ(0);
+}
+
+body,
+html {
+	height: 100%;
+}
+
+// Remove outline from focused elements
+*:focus {
+	outline: 0 none;
+}
+
+/* Links
+--------------------------------------------- */
+
+a {
+	border-bottom: 1px solid #cecece;
+	color: $color-green-3;
+	text-decoration: none;
+
+	&:hover {
+		//color: $color-green-1;
+		border-bottom-color: $color-green-5;
+	}
+}
+
+nav a {
+	border-bottom: 0;
+}
+
+
+/* Forms
+--------------------------------------------- */
+
+label {
+	display: block;
+	font-size: 1em;
+	line-height: 1.8em;
+	margin: 0;
+	font-weight: bold;
+}
+
+input {
+	font-family: $sans-serif;
+	// Text inputs
+	&[type=text],
+	&[type=password] {
+		@extend .text-input;
+	}
+
+
+}
+
+input:disabled {
+	&[type=text],
+	&[type=password] {
+		@extend .text-input-disabled;
+	}
+}
+
+fieldset {
+	padding: 0;
+	border: 0;
+}
+
+legend {
+	@extend .visuallyhidden;
+}
+
+
+
+
+/* Helpers
+--------------------------------------------- */
+
+// Clearing
+.clearfix:before,
+.clearfix:after { content: "\0020"; display: block; height: 0; overflow: hidden; }
+.clearfix:after { clear: both; }
+.clearfix { zoom: 1; }
+
+.group {
+	@extend .clearfix;
+}
+
+// Very hidden and inaccessible
+.hidden { display: none; visibility: hidden; }
+
+// Hidden but accessible
+.visuallyhidden { border: 0 !important; clip: rect(0 0 0 0); clip: rect(0, 0, 0, 0); height: 1px !important; margin: -1px !important; overflow: hidden; padding: 0 !important; position: absolute !important; width: 1px !important; }
+.visuallyhidden-focusable:active,
+.visuallyhidden-focusable:focus { clip: auto; height: auto; margin: 0; overflow: visible; position: static; width: auto; }
+.visual { border: 0; clip: rect(auto, auto, auto, auto); height: auto; margin: auto; overflow: auto; padding: inherit; position: inherit; width: auto; }
+
+// Visally hidden but still in flow
+.invisible { visibility: hidden; }
+.visible { visibility: visible; }
+
+// Offscreen positioning
+.offscreen { position: absolute; left: -5000em; }
+// Offscreen but still in flow
+.offscreen-invisible { position: relative; left: -5000em; }
+
+/* FORM ELEMENTS
+ * Patterns for all kinds of inputs
+*/
+
+$input-padding-top: .75em;
+$input-padding-bottom: .75em;
+$input-padding-left: .5em;
+$input-padding-right: .5em;
+
+/* Text fields */
+.text-input {
+	@include prefixr(box-sizing, border-box);
+	background: $color-green-6;
+	border: none;
+	color: $color-gray-1;
+	display: block;
+	font-size: .9em;
+	margin: 0;
+	max-width: 16em;
+	padding: $input-padding-top $input-padding-bottom;
+	width: 100%;
+	min-height: 0;
+	min-width: 10em;
+
+	@include prefixr(box-shadow, inset 0px 1px 2px rgba(59, 59, 59, 0.5));
+	@include prefixr(border-radius, 3px);
+	@include prefixr(transition, all .15s ease-in);
+
+	-webkit-appearance: none;
+
+	&:focus {
+		outline: 0 none;
+	}
+
+	&::-webkit-input-placeholder {
+		color: lighten($color-gray-1, 50%);
+	}
+	&:-moz-placeholder {
+		color: lighten($color-gray-1, 50%);
+	}
+	&:focus::-webkit-input-placeholder {
+		color: lighten($color-gray-1, 60%);
+	}
+	&:focus:-moz-placeholder {
+		color: lighten($color-gray-1, 60%);
+	}
+
+	.touch & {
+		padding: $input-padding-top / 2 $input-padding-bottom / 2;
+		font-size: 16px;
+	}
+
+	.no-boxshadow & { border: 1px solid $color-gray-7; }
+	.no-boxsizing &,
+	.lt-ie8 & { width: auto; }
+
+  &.error {
+	border: 1px solid #ed464d;
+  }
+
+  &.success {
+	border: 1px solid $color-green-1;
+  }
+}
+
+.text-input-disabled {
+	background: url(../graphics/input-disabled.png);
+}
+
+.form-error-message {
+	background: #fce2e6;
+	color: $color-red;
+	padding: em(10);
+}
+
+
+#loginWrapper {
+	min-height: 218px;
+	margin-bottom: 20px;
+}
+
+
+
+/* ---------------------------------- */
+
+.post {
+	font-size: .85em;
+
+	input {
+		width: 100%;
+		max-width: none;
+		margin-bottom: 1em;
+	}
+
+	.btn {
+		position: relative;
+		font-size: 1.3em;
+		margin-bottom: 1em;
+	}
+
+	input.btn {
+		padding: 10px 20px;
+		background-color: #3B3B3B;
+	}
+
+
+	ul { padding: 0; }
+	li {
+		margin: 0 0 .1em 0;
+		list-style: none;
+
+		a {
+			color: $color-text;
+			font-weight: bold;
+			line-height: 1.5;
+		}
+	}
+
+	p {
+		margin: 0 0 1em;
+	}
+}

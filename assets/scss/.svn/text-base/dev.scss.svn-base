@@ -1,0 +1,213 @@
+@import 'base';
+
+// Mark prototype content priority
+$stops: 10;
+@for $i from 1 through $stops {
+	$hue: (360 / $stops) * $i;
+	[data-block="#{$i}"],
+	.layout-#{$i} .dummy {
+		background-color: hsl($hue, 70%, 50%) !important;
+		color: #fff;
+	}
+}
+
+// Utility bar hud
+
+$utilBar-height: 40px;
+$utilBar-color: #FEDC00;
+$utilBar-btn-color: #F26F81;
+
+
+#utilityBar {
+	position: fixed;
+	bottom: 0;
+	width: 100%;
+
+	background: $utilBar-color;
+	height: $utilBar-height;
+
+	#toggle {
+		position: relative;
+		top: 0;
+		left: 0;
+
+		#utilityBar[aria-expanded=false] & {
+			top: -$utilBar-height;
+		}
+	}
+
+	button {
+		background: $utilBar-btn-color;
+		border: darken($utilBar-btn-color, 10%);
+		padding: .8em 1em;
+
+		&:active {
+			background: darken($utilBar-btn-color, 20%);
+		}
+	}
+}
+
+// Mini-model for layout groups (1/10 size)
+
+.model-list {
+	padding: 0;
+
+	li {
+		float: left;
+		width: 100px;
+		list-style: none;
+		margin: 0 0 1em 1em;
+	}
+	a {
+		display: block;
+		padding: .5em 1em 1em 1em;
+		text-decoration: none;
+		background: #eee;
+		@include prefixr(box-shadow, inset 0 0 10px rgba(0, 0, 0, .15));
+		@include prefixr(transition, all .2s ease-in);
+
+		&:hover {
+			background: lighten($color-blueprint, 50%);
+			@include prefixr(box-shadow, inset 0 0 20px rgba($color-blueprint, .25));
+		}
+	}
+	h3 {
+		color: #999;
+		font-size: 13px;
+		font-weight: normal;
+		margin: 0 0 .5em 0;
+	}
+	.model {
+		width: 100%;
+		margin: 0;
+	}
+}
+.model {
+	width: 10%;
+	margin: 0 0 20px 0;
+
+	.container {
+		margin-left: -2px !important;
+	}
+	.sub {
+		border-left-width: 2px !important;
+		margin-bottom: 2px !important;
+	}
+	.dummy {
+		font-size: 10px;
+		text-indent: -999em;
+		line-height: 15px;
+		padding: 0;
+	}
+}
+
+.dummy {
+	width: 100%;
+	padding: 2em 0;
+	text-align: center;
+	font-size: 2em;
+	@include prefixr(box-shadow, inset 0 0 0 1px rgba(0, 0, 0, .4));
+
+	.textContent & {
+		font-size: 1em;
+
+		h3 {
+			margin-top: 0;
+		}
+		h3,
+		p {
+			padding: 0 1em;
+		}
+	}
+	&.compact {
+		padding: 1em 0;
+	}
+}
+
+.icon-test {
+	line-height: 1;
+	margin: 1em;
+}
+.fontS .icon-test {
+	font-size: 16px;
+}
+.fontM .icon-test {
+	font-size: 20px;
+}
+.fontL .icon-test {
+	font-size: 30px;
+}
+.fontXL .icon-test {
+	font-size: 40px;
+}
+
+.color-pink {
+	color: $color-pink;
+}
+.color-green {
+	color: $color-green-2;
+}
+.color-dark-green {
+	color: darken($color-green-2, 20%);
+	text-shadow: 0 1px 0 rgba(255, 255, 255, .4);
+}
+.color-brown {
+	color: $color-brown;
+}
+.bgDark {
+	padding: 15px;
+	background: $color-green-2;
+
+	.ikonknapp {
+		clear: both;
+		overflow: hidden;
+		margin: 0 0 20px 0;
+	}
+	.icon-test {
+	}
+	.sub {
+		overflow: hidden;
+	}
+	.label {
+		display: block;
+		float: left;
+	}
+
+	.fontS .label {
+		font-size: 13px;
+		line-height: 16px;
+	}
+	.fontM .label {
+		font-size: 15px;
+		line-height: 20px;
+	}
+	.fontL .label {
+		font-size: 16px;
+		line-height: 30px;
+	}
+	.fontXL .label {
+		font-size: 20px;
+		line-height: 40px;
+	}
+
+	// DOUBLE SHADOW WARFARE MTF!!!
+	&.label-2 {
+		.icon-test {
+			position: relative;
+			color: rgba(0, 0, 0, .8);
+			text-shadow: none;
+
+			&:after {
+				content: attr(data-character);
+				position: absolute;
+				top: 1px;
+				left: 0;
+				color: darken($color-green-2, 20%);
+				text-shadow: 0 1px 0 rgba(255, 255, 255, .4);
+			}
+		}
+		.label {
+			font-weight: bold;
+		}
+	}
+}

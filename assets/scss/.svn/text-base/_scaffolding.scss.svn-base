@@ -1,0 +1,560 @@
+	/* Grid
+--------------------------------------------- */
+
+/**
+ * Gridpak Beta SCSS
+ *
+ * Generator - http://gridpak.com/
+ * Created by @erskinedesign
+ */
+
+/* --- Gridpak variables ---*/
+$max_columns: 12;
+$padding: 0 0px;
+$gutter_px: 20px;
+$gutter_pc: 0;
+
+@mixin col {
+	border: 0px solid transparent;
+	float: left;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	-moz-background-clip: padding-box !important;
+	-webkit-background-clip: padding-box !important;
+	background-clip: padding-box !important;
+	border-left-width: $gutter_px;
+	list-style: none;
+
+	.no-boxsizing & {
+		border-left-width: 0;
+	}
+}
+@mixin col-reset {
+	border: 0;
+	-webkit-box-sizing: content-box;
+	-moz-box-sizing: content-box;
+	box-sizing: content-box;
+	-moz-background-clip: border-box !important;
+	-webkit-background-clip: border-box !important;
+	background-clip: border-box !important;
+	border-left-width: 0;
+}
+
+@mixin span($num, $gutter_pc, $gutter_px, $padding, $max_columns) {
+	$one_col: (100% - ($gutter_pc * ($max_columns - 1))) / $max_columns;
+	width: ($one_col * $num) + ($gutter_pc * ($num - 1));
+	border-left-width: $gutter_px;
+	padding: $padding;
+	margin-left: $gutter_pc;
+}
+@function span($num) {
+	$one_col: (100% - ($gutter_pc * ($max_columns - 1))) / $max_columns;
+	@return ($one_col * $num) + ($gutter_pc * ($num - 1));
+}
+
+@mixin span_first {
+	margin-left:0;
+}
+
+@mixin row() {
+	margin-left:-$gutter_px;
+}
+
+// Helpers for flexible grids
+@mixin flexgrid($target: 0, $context: 0) {
+	width: #{($target / $context) * 100%};
+}
+@function flexgrid-width($target: 0, $context: 0) {
+	@return ($target / $context) * 100%;
+}
+
+
+/*
+12 Column Grid 0px - 939px
+--------------------------------------
+
+Span 1:    8.33333333333%
+Span 2:    16.6666666667%
+Span 3:    25.0%
+Span 4:    33.3333333333%
+Span 5:    41.6666666667%
+Span 6:    50.0%
+Span 7:    58.3333333333%
+Span 8:    66.6666666667%
+Span 9:    75.0%
+Span 10:    83.3333333333%
+Span 11:    91.6666666667%
+Span 12:    100%
+
+-------------------------------------- */
+
+@for $i from 1 through 12 {
+	@if $i == 12 {
+		.span_#{$i} {
+			@include span_first;
+			width:100%;
+		}
+	} @else {
+		.span_#{$i} {
+		   width: span($i);
+		}
+	}
+}
+
+
+/* Layout models
+   Contains different reusable responsive column and grouping models
+--------------------------------------------- */
+
+// Extendables, to be extended NOT used in markup
+.border-box {
+	@include prefixr(box-sizing, border-box);
+}
+
+.horizontal-flexbox {
+	@include flexbox(row);
+}
+
+.vertical-flexbox {
+	@include flexbox(column);
+}
+
+.row {
+	@include row;
+
+	.no-boxsizing & {
+		margin-left: 0;
+	}
+}
+
+.column {
+	@include col;
+}
+
+.column-reset {
+	@include col-reset;
+}
+
+// More semantic layout names, to be used in markup
+// Column container/row
+.container {
+	@extend .row;
+	@extend .clearfix;
+}
+
+// Column
+.sub {
+	@extend .column;
+	//margin-bottom: $gutter_px;
+}
+
+ol[class*="layout-"],
+ul[class*="layout-"] {
+	padding-left: 0;
+}
+
+@media (min-width: 940px) {
+	.grid-wrapper {
+		position: relative;
+		width: 940px;
+		margin: 0 auto;
+		padding-left: 0;
+		padding-right: 0;
+	}
+}
+
+// Three quarters plus one
+.layout-1 {
+	> .sub {
+
+		@media (min-width: 768px) {
+			width: span(12);
+		}
+
+		@media (min-width: 940px) {
+			width: span(3);
+
+			&:first-child { width: span(9); }
+
+			.no-boxsizing & > * { margin-left: $gutter_px; }
+		}
+	}
+}
+
+// Three thirds
+.layout-2 {
+
+	> .sub {
+		width: span(4);
+
+		&.nthchild { clear: left; }
+		&:nth-child(3n+1) { clear: left; }
+
+		@media (max-width: 599px) {
+			width: span(6);
+
+			&:nth-child(3n+1) { clear: none; }
+
+			&:nth-child(odd) { clear: left; }
+		}
+
+		.no-boxsizing & {
+			width: 220px;
+			margin-left: $gutter_px;
+
+			&.nthchild { margin-left: 0; }
+		}
+	}
+}
+
+// Full col with a quarter (sibling) inset
+.layout-3 {
+
+	> .sub,
+	+ .sub {
+		width: span(12);
+		border-width: 0;
+	}
+
+	@media (min-width: 768px) {
+		width: span(12);
+
+		> .sub { width: span(8); }
+
+		+ .sub {
+			width: span(4);
+			border-left-width: $gutter_px;
+		}
+
+		.no-boxsizing & {
+			float: left;
+			width: span(8);
+
+			+ .sub {
+				border-left-width: 0;
+
+				> * { margin-left: $gutter_px; }
+			}
+
+			// IE7 was acting up, hence the "div"-selector
+			> div.sub { width: span(12); }
+		}
+	}
+}
+
+// Full width flow
+.layout-4 {
+	> .sub {
+		width: span(12);
+	}
+}
+
+// Single row squeeze with max 4 columns (no margins)
+.layout-5 {
+	position: relative;
+	.sub {
+		border-left-width: 1px;
+
+		&:first-child {
+			border-left-width: $gutter_px;
+		}
+	}
+	// 2 col
+	@media (min-width: 0px) and (max-width: 479px) {
+		.sub {
+			width: span(6);
+		}
+		// IE-friendly nth-child...
+		.sub + .sub ~ .sub {
+			display: none;
+		}
+	}
+	// 3 col
+	@media (min-width: 480px) and (max-width: 599px) {
+		.sub {
+			width: span(4);
+		}
+		// IE-friendly nth-child...
+		.sub + .sub + .sub ~ .sub {
+			display: none;
+		}
+	}
+	// 4 col
+	@media (min-width: 600px) {
+		.sub {
+			width: span(3);
+		}
+		// IE-friendly nth-child...
+		.sub + .sub + .sub + .sub ~ .sub {
+			display: none;
+		}
+	}
+}
+
+// Two > drop to one
+.layout-6 {
+
+	> .sub {
+		border-left-width: $gutter_px;
+		width: span(6);
+
+		&:nth-child(odd) { clear: left; }
+		&.nthchild { clear: left; }
+	}
+
+	@media (max-width: 480px) {
+		> .sub { width: span(12); }
+	}
+
+	.no-boxsizing & {
+		> .sub {
+			width: 48%;
+			border-left-width: 0;
+
+			&.nthchild + .sub {
+				float: right;
+			}
+		}
+	}
+}
+
+// Float grid > compact float grid > slideshow
+/*
+
+S
+25% + 25% + 25%
+
+M
+25% + 25% + 25% + 25%
+
+L
+50% + 50%
+50% + 50%
+
+*/
+.layout-7 {
+	@media (max-width: 650px) {
+		position: relative;
+	}
+	> .sub {
+		@media (max-width: 650px) {
+			width: span(4);
+			border-left-width: $gutter_px / 2;
+			margin-bottom: $gutter_px * 2;
+
+			+ .sub + .sub ~ .sub {
+				display: none;
+			}
+		}
+		@media (min-width: 651px) and (max-width: 767px) {
+			width: span(3);
+			border-left-width: $gutter_px / 2;
+			margin-bottom: -$gutter_px / 2;
+
+			&:first-child {
+				border-left-width: $gutter_px;
+			}
+		}
+		@media (min-width: 768px) {
+			width: span(6);
+		}
+	}
+}
+
+// Floated matrix grid
+.layout-8 {
+	margin-left: -$gutter_px / 2;
+
+	> .sub {
+		width: span(2);
+		border-left-width: $gutter_px / 2;
+		margin-bottom: $gutter_px / 2;
+
+		@media (max-width: 480px) {
+			width: span(4);
+		}
+		@media (min-width: 481px) and (max-width: 600px) {
+			width: span(3);
+		}
+	}
+}
+
+/*
+	Layout used in store page template
+*/
+.layout-9 {
+	> .sub {
+		width: span(12);
+	}
+}
+
+/*
+  Layout 10
+  66,6% + 33,3%
+*/
+
+.layout-10 {
+	> .sub {
+		&:first-child {
+			width: span(8);
+		}
+
+		+ .sub {
+			width: span(4);
+		}
+	}
+
+	@media (max-width: 480px) {
+		> .sub {
+			width: span(12)!important;
+		}
+	}
+
+}
+
+/*
+  Layout 11
+  6 x 16,6%
+*/
+
+.layout-11 {
+	> .sub {
+		width: span(2);
+	}
+
+	@media (max-width: 768px) {
+		> .sub {
+			width: span(6);
+
+			&:nth-child(odd) { clear: left; }
+		}
+	}
+}
+
+/*
+  Layout 12
+  33,3% + 66,6%
+*/
+
+.layout-12 {
+	> .sub {
+		width: span(4);
+
+		+ .sub {
+			width: span(8);
+
+			.no-boxsizing & > * { padding-left: $gutter_px; }
+		}
+	}
+
+	@media (max-width: 599px) {
+		> .sub { width: span(12)!important; }
+	}
+}
+
+// Layout 13
+// Content first: 33.3% + 66.6%
+.layout-13 {
+	> .sub {
+		float: right;
+		width: span(8);
+
+		+ .sub {
+			width: span(4);
+		}
+	}
+
+	@media (max-width: 599px) {
+		> .sub {
+			&,
+			& + .sub {  width: span(12); }
+		}
+	}
+}
+
+// Layout 14
+// 4 up matrix list, drops to two up
+.layout-14 {
+
+	// Something's up with how SASS renders the CSS that makes IE8 not comply
+	> .sub.nthchild { clear: left; }
+
+	> .sub {
+		width: 25%;
+
+		&:nth-child(4n+1),
+		&.nthchild { clear: left; }
+	}
+
+	@media (max-width: 479px) {
+		> .sub {
+			width: 50%;
+
+			&:nth-child(2n+1) { clear: left; }
+		}
+	}
+}
+
+// Layout 15
+// 25% + 75%
+.layout-15 {
+	> .sub {
+		width: span(3);
+		border-left-width: 0;
+
+		+ .sub {
+			width: span(9);
+		}
+	}
+
+	@media (max-width: 767px) {
+		> .sub {
+			&, & + .sub {
+				width: span(12);
+			}
+		}
+	}
+}
+
+.store-layout {
+	.intro-unit {
+		border-left: $gutter_px solid transparent;
+		margin-bottom: 0;
+		margin-left: -$gutter_px;
+
+		h1 {
+			margin-bottom: $gutter_px / 2;
+			margin-left: $gutter_px;
+		}
+
+		.sub {
+			border-left: $gutter_px solid transparent;
+			width: span(4);
+
+			.no-boxsizing & { border-left: 0; }
+		}
+	}
+
+	> .sub {
+		float: right;
+		width: span(8);
+
+		+ .sub {
+			float: left;
+			width: span(4);
+		}
+	}
+
+	@media (max-width: 599px) {
+		.sub { width: span(12)!important; }
+
+		.service-list .sub {
+			width: span(6)!important;
+		}
+	}
+
+	.separator-heading {
+		color: $color-brown;
+	}
+}
