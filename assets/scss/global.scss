@@ -5,6 +5,13 @@ body {
 	background: #000;
 }
 
+.preload * {
+  -webkit-transition: none !important;
+  -moz-transition: none !important;
+  -ms-transition: none !important;
+  -o-transition: none !important;
+}
+
 h1,
 h2,
 h3 {
@@ -13,6 +20,7 @@ h3 {
 	color: #000;
 	font-weight: 400;
 }
+
 
 .header {
 	position: fixed;
@@ -36,6 +44,9 @@ h3 {
 		}
 
 		a {
+			transition: opacity .25s ease-in-out;
+			-moz-transition: opacity .25s ease-in-out;
+			-webkit-transition: opacity .25s ease-in-out;
 			&:hover {
 				opacity: 0.7;
 			}
@@ -61,14 +72,15 @@ h3 {
 
 		.sv,
 		.en {
-			&:hover {
-				cursor: pointer;
-			}
 			text-indent: -9999px;
 			width: 24px;
 			height: 24px;
 			background: url(/assets/img/lang.png) no-repeat;
 			display: block;
+
+			&:hover {
+				cursor: pointer;
+			}
 		}
 
 		.sv {
@@ -115,6 +127,9 @@ h3 {
 	padding: 20px 70px;
 	background: #000;
 	border-radius: 3px;
+	transition: opacity .25s ease-in-out;
+	-moz-transition: opacity .25s ease-in-out;
+	-webkit-transition: opacity .25s ease-in-out;
 
 	&:hover {
 		opacity: 0.8;
@@ -186,20 +201,13 @@ h3 {
 	}
 }
 
+
 .home .slides img {
 	position: fixed; 
   	top: 0; 
   	left: 0; 
   	min-width: 100%;
   	min-height: 100%;
-}
-
-.wrapper {
-	-webkit-transition-duration: .5s;
-	-moz-transition-duration: .5s;
-	-ms-transition-duration: .5s;
-	-o-transition-duration: .5s;
-	transition-duration: .5s;
 }
 
 .home .slides {
@@ -380,6 +388,9 @@ h3 {
 		width: 38px;
 
 		a {
+			transition: opacity .15s ease-in-out;
+			-moz-transition: opacity .15s ease-in-out;
+			-webkit-transition: opacity .15s ease-in-out;
 			display: block;
 			text-decoration: none;
 			width: 38px;
@@ -413,7 +424,27 @@ h3 {
 		height: 80%;
 	}
 
+	.content {
+		opacity: 0;
+		-webkit-transition: all 1.3s ease;
+		-moz-transition: all 1.3s ease;
+		-ms-transition: all 1.3s ease;
+		-o-transition: all 1.3s ease;
+		transition: all 1.3s ease;
+		transition-delay: 0.7s;
+		-webkit-transition-delay: 0.7s;
+	}
+
 	.content-1 {
+		opacity: 0;
+		-webkit-transition: all 1s ease;
+		-moz-transition: all 1s ease;
+		-ms-transition: all 1s ease;
+		-o-transition: all 1s ease;
+		transition: all 1s ease;
+		transition-delay: 0.1s;
+		-webkit-transition-delay: 0.1s;
+		
 		position: relative;
 		width: 45%;
 		height: auto;
@@ -553,7 +584,15 @@ h3 {
 	.head {
 		width: 80%;
 		margin: 0 auto;
+		opacity: 0;
 		text-align: center;
+		-webkit-transition: all 2s ease;
+		-moz-transition: all 2s ease;
+		-ms-transition: all 2s ease;
+		-o-transition: all 2s ease;
+		transition: all 2s ease;
+		transition-delay: 0.3s;
+		-webkit-transition-delay: 0.3s;
 	}
 
 	.container {
@@ -565,3 +604,14 @@ h3 {
 		max-width: 1300px;
 	}
 }
+
+
+.loaded {
+	#story .content-1,
+	#story .content,
+	#story .head {
+		opacity: 1;
+	}
+}
+
+

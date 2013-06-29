@@ -5,7 +5,7 @@
 	<div class="row">
 		
 		<div class="block">
-			<a href="#">
+			<a href="story.php">
 				<div class="vignette"></div>
 				<img src="/assets/tmp/storie1.jpg">
 			

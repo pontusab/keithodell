@@ -1,4 +1,7 @@
-<?php include 'components/header.php'; ?>
+<?php
+$start = true;
+include 'components/header.php'; 
+?>
 <div class="home flexslider">
 	<div class="intro">
 		<div class="inner">

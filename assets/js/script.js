@@ -17,4 +17,7 @@ $(document).ready(function() {
 		'slideshowSpeed': 4000,
 		'animationSpeed': 900
 	});
+
+	$('body').removeClass('preload');
+	$('body').addClass('loaded');
 });

@@ -12,11 +12,16 @@
 	<link rel="stylesheet" href="/assets/css/screen-min.css" />
 </head>
 	<html>
-		<body>
+		<body class="preload">
 			<div class="wrapper">
 
 				<div class="header">
 					<ul class="nav">
+						<?php if( empty( $start ) ) : ?>
+							<li>
+								<a href="/">Home</a>
+							</li>
+						<?php endif; ?>
 						<li>
 							<a href="/stories.php">Stories</a>
 						</li>
