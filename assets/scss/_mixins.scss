@@ -1,3 +1,5 @@
+$default-prefixes: 3px;
+
 @mixin prefixr($property, $value, $prefixes: $default-prefixes) {
 	$property: unquote($property);
 

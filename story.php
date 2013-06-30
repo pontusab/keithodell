@@ -4,28 +4,28 @@
 	<div class="container">
 
 		<div class="buttons">
-			<a class="close icon-cancel" alt="Close story" href="stories.php"></a>
-			<a class="next icon-right-open-big" alt="Next story" href="story.php"></a>
+			<a class="close icon-cancel-1" alt="Close story" href="stories.php"></a>
 			<a class="prev icon-left-open-big" alt="Previous story"  href="story.php"></a>
+			<a class="next icon-right-open-big" alt="Next story" href="story.php"></a>
 		</div>
 
 		<div class="content-1">
 			<div class="vignette"></div>
 			<ul class="slides">
 				<li>
-					<img src="/assets/tmp/storie1.jpg"/>
+					<img src="http://keith.pontusab.se/assets/tmp/storie1.jpg"/>
 				</li>
 				<li>
-					<img src="/assets/tmp/storie2.jpg"/>
+					<img src="http://keith.pontusab.se/assets/tmp/storie2.jpg"/>
 				</li>
 				<li>
-					<img src="/assets/tmp/storie3.jpg"/>
+					<img src="http://keith.pontusab.se/assets/tmp/storie3.jpg"/>
 				</li>
 				<li>
-					<img src="/assets/tmp/storie4.jpg"/>
+					<img src="http://keith.pontusab.se/assets/tmp/storie4.jpg"/>
 				</li>
 				<li>
-					<img src="/assets/tmp/storie5.jpg"/>
+					<img src="http://keith.pontusab.se/assets/tmp/storie5.jpg"/>
 				</li>
 			</ul>
 		</div>

@@ -3,3 +3,8 @@
 @import "reset";
 @import "mixins";
 @import "global";
+
+
+@media only screen and (max-width: 980px) {
+	@import "small";
+}

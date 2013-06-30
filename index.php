@@ -7,7 +7,7 @@ include 'components/header.php';
 		<div class="inner">
 			<div class="profile">
 				<div class="avatar">
-					<img src="/assets/tmp/avatar.png" />
+					<img src="http://keith.pontusab.se/assets/tmp/avatar.png" />
 				</div>
 				<div class="name">
 					<h2>Keith O'dell</h2>
@@ -28,13 +28,13 @@ include 'components/header.php';
 	<div class="vignette"></div>
 	<ul class="slides">
 		<li>
-			<img src="/assets/tmp/slide1.jpg" />
+			<img src="http://keith.pontusab.se/assets/tmp/slide1.jpg" />
 		</li>
 		<li>
-			<img src="/assets/tmp/slide2.jpg" />
+			<img src="http://keith.pontusab.se/assets/tmp/slide2.jpg" />
 		</li>
 		<li>
-			<img src="/assets/tmp/slide3.jpg" />
+			<img src="http://keith.pontusab.se/assets/tmp/slide3.jpg" />
 		</li>
 	</ul>
 

@@ -5,7 +5,7 @@ include 'components/header.php';
 <div class="page text">
 	<div class="images">
 		<div class="vignette"></div>
-		<img src="/assets/tmp/header.jpg"/>
+		<img src="http://keith.pontusab.se/assets/tmp/header.jpg"/>
 	</div>
 
 	<div class="container">

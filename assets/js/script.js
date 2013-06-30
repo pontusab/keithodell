@@ -3,6 +3,14 @@
 @codekit-prepend "vendors/jquery.jscroll.min.js"
 */
 
+if( !window.location.hash && window.addEventListener ){
+	window.addEventListener("load",function() {
+		setTimeout(function(){
+			window.scrollTo(0, 0);
+		}, 0);
+	});
+}
+
 $(document).ready(function() {
 	
 	$('.flexslider').flexslider({
@@ -27,4 +35,9 @@ $(document).ready(function() {
 	//     nextSelector: 'a.next-set',
 	//     contentSelector: '.row'
 	// });
+	
+	$('.icon-menu').click( function() {
+		$('.menu').toggleClass('expanded');
+	});
+
 });
