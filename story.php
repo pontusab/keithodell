@@ -4,7 +4,7 @@
 	<div class="container">
 
 		<div class="buttons">
-			<a class="close icon-cancel-1" alt="Close story" href="stories.php"></a>
+			<a class="close icon-cancel-1" alt="Close story" href="story-map.php"></a>
 			<a class="prev icon-left-open-big" alt="Previous story"  href="story.php"></a>
 			<a class="next icon-right-open-big" alt="Next story" href="story.php"></a>
 		</div>

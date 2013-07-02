@@ -16,7 +16,7 @@
 			<div class="wrapper <?php echo ( isset( $img ) ? '' : 'no-img' ); ?>">
 
 				<div class="menu">
-					<div class="icon-menu <?php echo ( isset( $stories ) ? 'white' : '' ); ?>"></div>
+					<div class="icon-menu"></div>
 					<div class="mobile">
 						<ul>
 							<?php if( empty( $start ) ) : ?>
@@ -25,7 +25,7 @@
 								</li>
 							<?php endif; ?>
 							<li>
-								<a href="/stories.php">Stories</a>
+								<a href="/story-map.php">Stories</a>
 							</li>
 							<li>
 								<a href="/about.php">About me</a>
@@ -46,7 +46,7 @@
 							</li>
 						<?php endif; ?>
 						<li>
-							<a href="/stories.php">Stories</a>
+							<a href="/story-map.php">Stories</a>
 						</li>
 						<li>
 							<a href="/about.php">About me</a>

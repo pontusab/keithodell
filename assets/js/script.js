@@ -1,6 +1,8 @@
 /*
 @codekit-prepend "vendors/jquery.flexslider-min.js"
 @codekit-prepend "vendors/jquery.jscroll.min.js"
+@codekit-prepend "vendors/jquery.google-maps.tooltip.js"
+@codekit-prepend "vendors/googlemaps.js"
 */
 
 if( !window.location.hash && window.addEventListener ){

@@ -134,6 +134,14 @@ h1 {
 	.block {
 		width: 100%;
 	}
+
+	.nav-bar {
+		width: 100%;
+	}
+
+	.map {
+		display: none;
+	}
 }
 
 
@@ -144,28 +152,9 @@ h1 {
 		width: 100%;
 	}
 
-	.content-1 {
-		display: none;
-	}
-
+	.content-1,
 	.buttons {
-		position: fixed;
-		right: 0;
-		bottom: 0;
-		top: auto;
-		width: 100%;
-		background: #000;
-		z-index: 80;
-		a {
-			font-size: 25px;
-			width: 31%;
-			padding: 8px 0;
-			display: inline-block;
-
-			&.close {
-				font-size: 19px;
-			}
-		}
+		display: none;
 	}
 
 	.content {
