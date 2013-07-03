@@ -16,17 +16,29 @@ if( !window.location.hash && window.addEventListener ){
 $(document).ready(function() {
 	
 	$('.flexslider').flexslider({
-		'pauseOnAction': false,
-		'directionNav': false,
-		'slideshowSpeed': 8300,
-		'animationSpeed': 1300
+		pauseOnAction: false,
+		directionNav: false,
+		slideshowSpeed: 8300,
+		animationSpeed: 1300
 	});
 
 	$('.content-1').flexslider({
-		'animation': 'slide',
-		'directionNav': false,
-		'slideshowSpeed': 4000,
-		'animationSpeed': 900
+		animation: 'slide',
+		directionNav: false,
+		slideshowSpeed: 4000,
+		animationSpeed: 900
+	});
+
+	$('.list').flexslider({
+	    animation: "slide",
+	    animationLoop: false,
+	    directionNav: false,
+	    itemWidth: 300,
+	    itemMargin: 5,
+	    randomize: true,
+	    slideshow: false,
+	    pauseOnHover: true,
+	    controlNav: false
 	});
 
 	$('body').removeClass('preload');

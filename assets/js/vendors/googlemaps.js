@@ -7,14 +7,6 @@ function addRaster() {
 }
 
 function initialize() {
-	var map;
-
-    var chHtml ="<h3><a href='http://en.wikipedia.org/wiki/Chicago,_Illinois'"
-+" target='_blank'>Chicago, Illinois</a></h3><div>"
-+"<img src='http://upload.wikimedia.org/wikipedia/commons/thumb/0/06/20070909_"
-+"Chicago_Half_Marathon.JPG/220px-20070909_Chicago_Half_Marathon.JPG'"
-+" width='220' hieght='174' />"
-+"</div><div>Chicago is the largest city in the U.S. state of Illinois.</div>";
 
     var locations = [
         ['France', 46.227638,2.213749, 3],
