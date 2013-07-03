@@ -4,9 +4,9 @@
 	<div class="container">
 
 		<div class="buttons">
-			<a class="close icon-cancel-1" alt="Close story" href="story-map.php"></a>
-			<a class="prev icon-left-open-big" alt="Previous story"  href="story.php"></a>
-			<a class="next icon-right-open-big" alt="Next story" href="story.php"></a>
+			<a class="close" alt="Close story" href="story-map.php"></a>
+			<a class="prev" alt="Previous story"  href="story.php"></a>
+			<a class="next" alt="Next story" href="story.php"></a>
 		</div>
 
 		<div class="content-1">
@@ -35,7 +35,7 @@
 				<h1>A SINGLE RULE FOR WINE TASTING</h1>
 				<div class="meta">
 					<div class="inner">
-						June 25, 2013
+						<small>in</small> France
 					</div>
 				</div>	
 			</div>
@@ -67,9 +67,9 @@
 			</div>
 
 			<div class="share">
-				<a href="#" class="fb icon-facebook-circled"></a>
-				<a href="#" class="gp icon-gplus-circled"></a>
-				<a href="#" class="tw icon-twitter-circled"></a>
+				<a href="#" class="fb"></a>
+				<a href="#" class="gp"></a>
+				<a href="#" class="tw"></a>
 			</div>
 		</div>
 

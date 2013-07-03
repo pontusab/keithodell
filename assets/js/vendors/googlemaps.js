@@ -9,20 +9,20 @@ function addRaster() {
 function initialize() {
 
     var locations = [
-        ['France', 46.227638,2.213749, 3],
-        ['Linköping', 58.410807,15.621373, 2],
-        ['New York', 40.714353,-74.005973, 2],
-        ['Spain', 40.463667,-3.74922, 2],
-        ['Stockholm', 59.32893,18.06491, 2],
-        ['Africa', -8.783195,34.508523, 2],
-        ['Canada', 56.130366,-106.346771, 2],
-        ['Greenland', 71.706936,-42.604303, 2],
-        ['Cuba', 21.521757,-77.781167, 2],
-        ['Ireland', 53.41291,-8.24389, 2],
-        ['Paraguay', -23.442503,-58.443832, 2],
-        ['New Zeland', -40.900557,174.885971, 2],
-        ['Madagascar', -18.766947,46.869107, 2],
-        ['India', 20.593684,78.96288, 2],
+        ['France', 46.227638,2.213749, '/story.php'],
+        ['Linköping', 58.410807,15.621373, '/story.php'],
+        ['New York', 40.714353,-74.005973, '/story.php'],
+        ['Spain', 40.463667,-3.74922, '/story.php'],
+        ['Stockholm', 59.32893,18.06491, '/story.php'],
+        ['Africa', -8.783195,34.508523, '/story.php'],
+        ['Canada', 56.130366,-106.346771, '/story.php'],
+        ['Greenland', 71.706936,-42.604303, '/story.php'],
+        ['Cuba', 21.521757,-77.781167, '/story.php'],
+        ['Ireland', 53.41291,-8.24389, '/story.php'],
+        ['Paraguay', -23.442503,-58.443832, '/story.php'],
+        ['New Zeland', -40.900557,174.885971, '/story.php'],
+        ['Madagascar', -18.766947,46.869107, '/story.php'],
+        ['India', 20.593684,78.96288, '/story.php'],
     ];
 
     var style = [{
@@ -54,7 +54,6 @@ function initialize() {
 
     var mapOptions = {
 	    disableDefaultUI: true,
-        //draggable: false,
         backgroundColor: '#eae4d6',
         minZoom: 2,
 	    mapTypeId: google.maps.MapTypeId.ROADMAP
@@ -66,30 +65,43 @@ function initialize() {
         styles: style
     });
 
-
     var image = {
-        url: 'assets/img/pointer.png',
+        url: 'assets/img/point.png',
     };
 
-    var infowindow = new google.maps.InfoWindow();
+    var selected = {
+        url: 'assets/img/point-selected.png',
+    };
 
     var bounds = new google.maps.LatLngBounds();
 
-    for (i = 0; i < locations.length; i++) {
-        marker = new google.maps.Marker({
+    for( i = 0; i < locations.length; i++ ) {
+        var marker = new google.maps.Marker({
             position: new google.maps.LatLng(locations[i][1], locations[i][2]),
             map: map,
-            icon: image,
+            icon: image
         });
 
         bounds.extend(marker.position);
 
-        google.maps.event.addListener(marker, 'click', (function (marker, i) {
+        google.maps.event.addListener(marker, 'mouseover', (function (marker, i) {
             return function () {
-                infowindow.setContent(locations[i][0]);
-                infowindow.open(map, marker);
+                marker.setIcon(selected);
             }
         })(marker, i));
+
+        google.maps.event.addListener(marker, 'mouseout', (function (marker, i) {
+            return function () {
+                marker.setIcon(image);
+            }
+        })(marker, i));
+
+        google.maps.event.addListener(marker, 'click', (function (marker, i) {
+            return function () {
+                window.location.href = locations[i][3];
+                }
+        })(marker, i));
+
     }
 
     map.fitBounds(bounds);

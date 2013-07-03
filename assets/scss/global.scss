@@ -322,7 +322,16 @@ h3 {
 			line-height: 38px;
 			font-size: 20px;
 
+			&.prev {
+				@include icon(left-open-big);
+			}
+
+			&.next {
+				@include icon(right-open-big);
+			}
+
 			&.close {
+				@include icon(cancel-1);
 				font-size: 13px;
 			}
 
@@ -455,6 +464,15 @@ h3 {
 		font-family: "Montserrat", sans-serif;
 		padding: 0 0 20px 0;
 
+		small {
+			text-transform: lowercase;
+			font-family: "Libre Baskerville", serif;
+			color: #CD0000;
+			font-style: italic;
+			font-weight: bold;
+			font-size: 18px;
+		}
+
 		.inner {
 			border-top: 1px solid #000;
 			display: inline-block;
@@ -552,10 +570,10 @@ h3 {
 		transition: all 1.8s ease;
 
 		img { 
-			 -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
+			-webkit-background-size: cover;
+			-moz-background-size: cover;
+			-o-background-size: cover;
+			background-size: cover;
 		}
 	}
 
@@ -687,16 +705,25 @@ h3 {
 		font-size: 30px;
 	}
 
-	.fb:hover {
-		color: #7cb6cf;
+	.fb {
+		@include icon(facebook-circled);
+		&:hover {
+			color: #7cb6cf;
+		}
 	}
 	
-	.gp:hover {
-		color: #e17676;
+	.gp {
+		@include icon(gplus-circled);
+		&:hover {
+			color: #e17676;
+		}
 	}
 
-	.tw:hover {
-		color: #88e3e6;
+	.tw {
+		@include icon(twitter-circled);
+		&:hover {
+			color: #88e3e6;
+		}
 	}
 }
 
@@ -716,6 +743,199 @@ h3 {
 		background: #000;
 	}
 
+	#map-canvas {
+		width: 100%;
+		height: 100%;
+		background: #f8f3dd;
+	}
+
+	.map {
+		width: 100%;
+		position: fixed;
+		right: 0;
+		height: 100%;
+		top: 65px;
+		background: #f8f3dd;
+	}
+
+	.raster { 
+	  	position: absolute;
+	  	width: 10000000px;
+	  	height: 10000000px;
+	  	left: -10000px;
+	  	top: -10000px;
+	  	bottom: -10000px;
+	  	right: -100000px;
+	  	z-index: 10;
+		background: url(/assets/img/raster.png);
+	}
+
+	.toggle {
+		position: absolute;
+    	left: 50%;
+    	top: -29px;
+    	border-left: 1px solid #c8c3b7;
+    	border-right: 1px solid #c8c3b7;
+    	border-top: 1px solid #c8c3b7;
+   	 	margin-left: -30px;
+		width: 60px;
+		height: 30px;
+		background: rgba(255,255,255,0.6);
+		text-align: center;
+		line-height: 30px;
+		color: #867a65;
+		cursor: pointer;
+		@include icon(down-open-big);
+	}
+
+	.flex-prev,
+	.flex-next {
+		position: absolute;
+		text-decoration: none;
+		top: 0;
+		height: 300px !important;
+		width: 50px !important;
+		background: #000;
+		display: block;
+		width: 40px;
+		height: 40px;
+		color: #fff;
+		text-align: center;
+		line-height: 300px;
+		z-index: 60;
+		font-size: 30px;
+
+		&:hover {
+			background: #fff;
+			color: #000;
+			-webkit-transition: background-color 100ms linear;
+			-moz-transition: background-color 100ms linear;
+			-o-transition: background-color 100ms linear;
+			-ms-transition: background-color 100ms linear;
+			transition: background-color 100ms linear;
+		}
+	}
+
+	// .flex-disabled {
+	// 	color: #000;
+	// 	&:hover {
+	// 		background: #000;
+	// 	}
+	// }
+
+	.control {
+		position: absolute;
+		left: 20px;
+		top: 20px;
+		z-index: 100;
+		line-height: 28px;
+		text-align: center;
+		background: rgba(255,255,255,0.6);
+		font-weight: normal;
+	}
+
+	.in,
+	.out {
+		color: #867a65;
+		display: block;
+		float: left;
+		border: 1px solid #aca08d;
+		width: 28px;
+		height: 28px;
+		font-size: 23px;
+		font-weight: bold;
+	}
+
+	.infobox-wrapper {
+		display: none;
+	}
+
+	.info {
+		width: 267px;
+		height: auto;
+		padding: 10px;
+		background: #252622;
+
+		.image-wrapper {
+			float: left;
+			border: 1px solid #D5D5D5;
+			padding: 3px;
+			width: 50px;
+			height: 50px;
+			display: inline-block;
+			background: #fff;
+			margin-right: 10px;
+		}
+
+		i {
+			display: block;
+			position: absolute;
+			width: 17px;
+			height: 6px;
+			bottom: -6px;
+			left: 50%;
+			margin-left: -9px;
+			background:  url(/assets/img/bubble-arrow.png);
+		}
+	}
+
+	.out {
+		border: none;
+		border-right: 1px solid #aca08d;
+		border-top: 1px solid #aca08d;
+		border-bottom: 1px solid #aca08d;
+	}
+
+	.flex-prev {
+		left: 0;
+		@include icon(left-open-big);
+	}
+
+	.flex-next {
+		right: 0;
+		@include icon(right-open-big);
+	}
+
+	.list {
+	 	position: absolute;
+	 	bottom: 0;
+	 	left: 0;
+	 	z-index: 10;
+	 	width: 100%;
+	 	height: 300px;
+	 	background: #000;
+	 	-webkit-transition: all 0.4s ease;
+		-moz-transition: all 0.4s ease;
+		-ms-transition: all 0.4s ease;
+		-o-transition: all 0.4s ease;
+		transition: all 0.4s ease;
+		border-top: 1px solid #c8c3b7;
+
+
+		&.closed {
+			bottom: -300px;
+
+			.toggle {
+				@include icon(up-open-big);
+			}
+		}
+
+		.story-items {
+			padding: 0 50px;
+		}
+
+	 	ul {
+	 		margin: 0;
+	 		padding: 0;
+	 	}
+
+	 	img {
+	 		display: block;
+	 		max-width: 100%;  
+	 		height: auto;
+	 	}
+	}
+
 	.row a {
 		display: block;
 		text-decoration: none;
@@ -732,7 +952,7 @@ h3 {
 
 		h2 {
 			color: #fff;
-			font-size: 24px;
+			font-size: 22px;
 			line-height: 46px;
 			letter-spacing: 2px;
 			font-weight: 400;
@@ -785,9 +1005,6 @@ h3 {
 		.vignette {
 			z-index: 50;
 			position: absolute;
-			transform: scale(0);
-			-webkit-transform: scale(0);
-			-ms-transform: scale(0);
 		}
 
 		img {
@@ -803,55 +1020,3 @@ h3 {
 	}
 }
 
-
-
-.stories {
-
-	#map-canvas {
-		width: 100%;
-		height: 100%;
-		background: #f8f3dd;
-	}
-
-	.map {
-		width: 100%;
-		position: fixed;
-		right: 0;
-		height: 100%;
-		top: 65px;
-		background: #f8f3dd;
-	}
-
-	.raster { 
-	  	position: absolute;
-	  	width: 10000000px;
-	  	height: 10000000px;
-	  	left: -10000px;
-	  	top: -10000px;
-	  	bottom: -10000px;
-	  	right: -100000px;
-	  	z-index: 10;
-		background: url(/assets/img/raster.png);
-	 }
-
-	 .list {
-	 	position: absolute;
-	 	bottom: 0;
-	 	left: 0;
-	 	z-index: 10;
-	 	width: 100%;
-	 	height: 300px;
-	 	background: #000;
-
-	 	ul {
-	 		margin: 0;
-	 		padding: 0;
-	 	}
-
-	 	img {
-	 		display: block;
-	 		max-width: 100%;  
-	 		height: auto;
-	 	}
-	 }
-}

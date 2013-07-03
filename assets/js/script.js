@@ -1,17 +1,7 @@
 /*
 @codekit-prepend "vendors/jquery.flexslider-min.js"
-@codekit-prepend "vendors/jquery.jscroll.min.js"
-@codekit-prepend "vendors/jquery.google-maps.tooltip.js"
 @codekit-prepend "vendors/googlemaps.js"
 */
-
-if( !window.location.hash && window.addEventListener ){
-	window.addEventListener("load",function() {
-		setTimeout(function(){
-			window.scrollTo(0, 0);
-		}, 0);
-	});
-}
 
 $(document).ready(function() {
 	
@@ -29,29 +19,36 @@ $(document).ready(function() {
 		animationSpeed: 900
 	});
 
-	$('.list').flexslider({
+	$('.story-items').flexslider({
 	    animation: "slide",
 	    animationLoop: false,
-	    directionNav: false,
 	    itemWidth: 300,
-	    itemMargin: 5,
-	    randomize: true,
+	    itemMargin: 0,
 	    slideshow: false,
 	    pauseOnHover: true,
-	    controlNav: false
+	    controlNav: false,
+	    prevText: '',         
+		nextText: '', 
+		animationLoop: true
 	});
 
 	$('body').removeClass('preload');
 	$('body').addClass('loaded');
-
-	// $('.stories .container').jscroll({
-	//     padding: 20,
-	//     nextSelector: 'a.next-set',
-	//     contentSelector: '.row'
-	// });
 	
 	$('.icon-menu').click( function() {
 		$('.menu').toggleClass('expanded');
 	});
 
+	var closed = localStorage.getItem('closed');
+
+	$('.toggle').click( function() {
+
+		// var key    = 'closed';
+		// var closed = localStorage.getItem(key);
+
+		// localStorage.removeItem(key);
+		// localStorage[key] = true;
+
+		$('.list').toggleClass('closed');
+	});
 });
