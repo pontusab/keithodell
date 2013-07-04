@@ -4,23 +4,33 @@
 @codekit-prepend "vendors/googlemaps.js"
 */
 
-$(document).ready(function() {
+$(document).ready(function() 
+{
+	// Add some clases for css3 transisions
+	$('body').removeClass('preload');
+	$('body').addClass('loaded');
 	
-	$('.flexslider').flexslider({
+	// Slides
+	$('.flexslider').flexslider(
+	{
 		pauseOnAction: false,
 		directionNav: false,
 		slideshowSpeed: 8300,
 		animationSpeed: 1300
 	});
 
-	$('.content-1').flexslider({
+	// Slides
+	$('.content-1').flexslider(
+	{
 		animation: 'slide',
 		directionNav: false,
 		slideshowSpeed: 4000,
 		animationSpeed: 900
 	});
 
-	$('.story-items').flexslider({
+	// Slides
+	$('.story-items').flexslider(
+	{
 	    animation: "slide",
 	    animationLoop: false,
 	    itemWidth: 300,
@@ -33,38 +43,73 @@ $(document).ready(function() {
 		animationLoop: true
 	});
 
-	$('body').removeClass('preload');
-	$('body').addClass('loaded');
-	
-	$('.icon-menu').click( function() {
+	// Add expanded to mobilemenu
+	$('.icon-menu').click( function() 
+	{
 		$('.menu').toggleClass('expanded');
 	});
 
-	var closed = localStorage.getItem('closed');
+	$(document).keydown( function(e) 
+    {
+        var keyCode = e.keyCode || e.which,
+        arrow = {up: 38, down: 40 };
+        
+        switch( keyCode ) 
+        {
+            case arrow.down: 
+                $('.list').addClass('closed');
+				$('.map').addClass('expanded');
+            break;
+            
+            case arrow.up: 
+                $('.list').removeClass('closed');
+				$('.map').removeClass('expanded');
+            break;
+        }
+    });
 
-	$('.toggle').click( function() {
-
-		// var key    = 'closed';
-		// var closed = localStorage.getItem(key);
-
-		// localStorage.removeItem(key);
-		// localStorage[key] = true;
-
+	// Add expanded to the storiespicker
+	$('.toggle').click( function() 
+	{
+		google.maps.event.trigger( map, 'resize' );
 		$('.list').toggleClass('closed');
+		$('.map').toggleClass('expanded');
 	});
 
 
-	$('.slides li').mouseenter( function() {
-		i = $(this).data('id');
-		marker = markers[i];
+	$('.control a').click( function() 
+	{
+		// var currentZoom = map.getZoom();
+		// console.log(currentZoom);
+
+		var oldValue = 2;
+
+		// if( this.text() == '+') 
+		// {
+		// 	var newVal = parseFloat( oldValue ) + 1;
+		// } 
+
+  		// map.setZoom(newVal);
+
+	});
+
+
+
+	// Control the map by mouseover 
+	$('.slides li').mouseenter( function() 
+	{
+		index = $(this).data('id');
+		marker = markers[index];
 		marker.setIcon( selected );
-        map.panTo( new google.maps.LatLng( data[i][1], data[i][2] ) );
-        infowindow.setContent( data[i][0] );
+        map.panTo( new google.maps.LatLng( data[index][1], data[index][2] ) );
+        infowindow.setContent( data[index][0] );
         infowindow.open( map, marker );
 	});
 
-	$('.slides li').mouseout( function() {
+	// Control the map by mouseout 
+	$('.slides li').mouseout( function() 
+	{
 		marker.setIcon( image );
 	});
-
 });
+

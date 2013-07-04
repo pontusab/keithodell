@@ -6,6 +6,7 @@ include 'components/header.php';
 	<div class="container">
 		<div class="list">
 			<div class="toggle"></div>
+
 			<div class="story-items">
   				<ul class="slides">
 					<li data-id="0">
@@ -217,6 +218,10 @@ include 'components/header.php';
 		</div>
 
 		<div class="map">
+			<div class="control">
+				<div class="in">+</div>
+				<div class="out">-</div>
+			</div>
 			<div id="map-canvas"></div>
 		</div>
 	</div>

@@ -753,9 +753,50 @@ h3 {
 		width: 100%;
 		position: fixed;
 		right: 0;
-		height: 100%;
+		height: auto;
 		top: 65px;
+		bottom: 220px;
 		background: #f8f3dd;
+		-webkit-transition: all 0.4s ease;
+		-moz-transition: all 0.4s ease;
+		-ms-transition: all 0.4s ease;
+		-o-transition: all 0.4s ease;
+		transition: all 0.4s ease;
+
+		&.expanded {
+			bottom: -20px;
+		}
+	}
+
+	.control {
+		position: absolute;
+		width: 100px;
+		left: 20px;
+		top: 0;
+		z-index: 100;
+		border-left: 1px solid rgba(157,145,126,0.7);
+		border-right: 1px solid rgba(157,145,126,0.7);
+		border-bottom: 1px solid rgba(157,145,126,0.7);
+		width: 60px;
+		height: 30px;
+		background: rgba(255,255,255,0.6);
+		text-align: center;
+		line-height: 30px;
+		color: #867a65;
+		cursor: pointer;
+		font-weight: bold;
+
+		.in,
+		.out {
+			height: 30px;
+			width: 30px;
+			float: left;
+		}
+
+		.in {
+			border-right: 1px solid rgba(157,145,126,0.7);
+			width: 29px;
+		}
 	}
 
 	.raster { 
@@ -772,21 +813,19 @@ h3 {
 
 	.tooltip {
 		text-align: center;
-		background: rgba(0,0,0,0.7);
-		padding: 5px 10px;
 		color: #fff;
-		margin: 0 auto;
-		border: 1px solid #020202;
 		font-size: 12px;
+		line-height: 30px;
+		display: block;
 	}
 
 	.toggle {
 		position: absolute;
     	left: 50%;
     	top: -29px;
-    	border-left: 1px solid #c8c3b7;
-    	border-right: 1px solid #c8c3b7;
-    	border-top: 1px solid #c8c3b7;
+    	border-left: 1px solid rgba(157,145,126,0.7);
+    	border-right: 1px solid rgba(157,145,126,0.7);
+    	border-top: 1px solid rgba(157,145,126,0.7);
    	 	margin-left: -30px;
 		width: 60px;
 		height: 30px;
@@ -947,10 +986,6 @@ h3 {
 
 		&:hover img {
 			opacity: 0.7;
-			background: rgba(0,0,0,0.6);
-			transform: scale(1.1,1.1);
-			-webkit-transform: scale(1.1,1.1);
-			-ms-transform: scale(1.1,1.1);
 		}
 
 		.vignette {
