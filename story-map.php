@@ -17,7 +17,7 @@ include 'components/header.php';
 								<div class="content">
 									<h2>International Chocolate</h2>
 									<div class="meta">
-										<span>Spain</span>
+										<span>France</span>
 									</div>
 
 									<div class="btn">Read story</div>
@@ -34,7 +34,7 @@ include 'components/header.php';
 								<div class="content">
 									<h2>International Chocolate</h2>
 									<div class="meta">
-										<span>New York</span>
+										<span>Linköping</span>
 									</div>
 
 									<div class="btn">Read story</div>
@@ -51,7 +51,7 @@ include 'components/header.php';
 								<div class="content">
 									<h2>International Chocolate</h2>
 									<div class="meta">
-										<span>Italy</span>
+										<span>New York</span>
 									</div>
 
 									<div class="btn">Read story</div>
@@ -223,7 +223,7 @@ include 'components/header.php';
 </div>
 
 <script type="text/javascript">
-	var locations = [
+	var data = [
 	    ['France', 46.227638,2.213749, '/story.php', 'Read about International Chocolate'],
 	    ['Linköping', 58.410807,15.621373, '/story.php', 'Read about International Chocolate'],
 	    ['New York', 40.714353,-74.005973, '/story.php', 'Read about International Chocolate'],

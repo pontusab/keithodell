@@ -1,10 +1,11 @@
 var markers;
-var marker;
 var map;
 var infowindow;
+var image;
+var selected;
 
 function initialize() {
-   // markers = new Array();
+   markers = new Array();
 
     var mapOptions = {
         disableDefaultUI: true,
@@ -18,11 +19,24 @@ function initialize() {
         mapTypeId: google.maps.MapTypeId.ROADMAP
     }
 
-    map = new google.maps.Map( document.getElementById( 'map-canvas' ), mapOptions );
-    var bounds = new google.maps.LatLngBounds();
-    var infowindow = new google.maps.InfoWindow();
+    map        = new google.maps.Map( document.getElementById( 'map-canvas' ), mapOptions );
+    bounds     = new google.maps.LatLngBounds();
+    infowindow = new InfoBubble({
+        minHeight: 26,
+        minWidth: 50,
+        map: map,
+        shadowStyle: 'transperant',
+        backgroundColor: 'transperant',
+        borderRadius: 0,
+        arrowSize: 0,
+        borderWidth: 0,
+        disableAutoPan: true,
+        hideCloseButton: true,
+        arrowPosition: 30,
+        backgroundClassName: 'tooltip',
+    });
 
-    var style = [{
+    style = [{
         "stylers": [{
             "visibility": "off"
         }]
@@ -51,45 +65,46 @@ function initialize() {
         styles: style
     });
 
-    var image = {
+    image = {
         url: 'assets/img/point.png',
     };
 
-    var selected = {
+    selected = {
         url: 'assets/img/point-selected.png',
     };
 
-    for( i = 0; i < locations.length; i++ ) {
+    for( i = 0; i < data.length; i ++ ) {
         var marker = new google.maps.Marker({
-            position: new google.maps.LatLng(locations[i][1], locations[i][2]),
+            position: new google.maps.LatLng(data[i][1], data[i][2]),
             map: map,
             icon: image,
             animation: google.maps.Animation.DROP,
-            title: locations[i][4]
+            title: data[i][4]
         });
 
         bounds.extend(marker.position);
 
         google.maps.event.addListener(marker, 'mouseover', (function (marker, i) {
-            return function () {
+            return function() {
                 marker.setIcon(selected);
+                infowindow.open();
+
             }
         })(marker, i));
 
         google.maps.event.addListener(marker, 'mouseout', (function (marker, i) {
-            return function () {
+            return function() {
                 marker.setIcon(image);
             }
         })(marker, i));
 
         google.maps.event.addListener(marker, 'click', (function (marker, i) {
-            return function () {
-                // infowindow.setContent(locations[i][0]);
-                // infowindow.open(map, marker);
-                window.location.href = locations[i][3];
+            return function() {
+                window.location.href = data[i][3];
             }
         })(marker, i));
 
+        markers.push( marker );
     }
 
     map.fitBounds(bounds);

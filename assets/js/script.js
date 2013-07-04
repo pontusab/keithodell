@@ -1,6 +1,7 @@
 /*
 @codekit-prepend "vendors/jquery.flexslider-min.js"
-@codekit-append "vendors/googlemaps.js"
+@codekit-prepend "vendors/infobubble-compiled.js"
+@codekit-prepend "vendors/googlemaps.js"
 */
 
 $(document).ready(function() {
@@ -53,11 +54,17 @@ $(document).ready(function() {
 	});
 
 
-	$('.slides li').hover( function() {
-		var current = $(this).data('id');
-		var infowindow = new google.maps.InfoWindow();
-        map.panTo( new google.maps.LatLng( locations[current][1], locations[current][2] ) );
-        // infowindow.setContent(locations[current][0]);
-        // infowindow.open( map, marker );
+	$('.slides li').mouseenter( function() {
+		i = $(this).data('id');
+		marker = markers[i];
+		marker.setIcon( selected );
+        map.panTo( new google.maps.LatLng( data[i][1], data[i][2] ) );
+        infowindow.setContent( data[i][0] );
+        infowindow.open( map, marker );
 	});
+
+	$('.slides li').mouseout( function() {
+		marker.setIcon( image );
+	});
+
 });
