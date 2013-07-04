@@ -4,6 +4,15 @@ var infowindow;
 var image;
 var selected;
 
+function load() 
+{
+    var script = document.createElement('script');
+    script.type = 'text/javascript';
+    script.src = 'http://maps.googleapis.com/maps/api/js?&sensor=false&callback=initialize';
+    document.body.appendChild(script);
+}
+window.onload = load;
+
 function initialize() 
 {
    markers = new Array();
@@ -94,6 +103,7 @@ function initialize()
             return function() 
             {
                 marker.setIcon(selected);
+                //map.panTo( new google.maps.LatLng( data[i][1], data[i][2] ) );
                 infowindow.setContent( data[i][0] );
                 infowindow.open( map, marker );
             }
@@ -125,9 +135,9 @@ function initialize()
 
 function addRaster() 
 {
-    var dv = document.createElement("DIV");
-    dv.className = "raster";
+    var dv = document.createElement('DIV');
+    dv.className = 'raster';
 
-    var mc = document.getElementById("map-canvas");
+    var mc = document.getElementById('map-canvas');
     mc.childNodes[0].childNodes[0].childNodes[0].appendChild(dv);
 }

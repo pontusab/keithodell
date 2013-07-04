@@ -16,30 +16,7 @@
 			<div class="wrapper <?php echo ( isset( $img ) ? '' : 'no-img' ); ?>">
 
 				<div class="menu">
-					<div class="icon-menu"></div>
-					<div class="mobile">
-						<ul>
-							<?php if( empty( $start ) ) : ?>
-								<li>
-									<a href="/">Start</a>
-								</li>
-							<?php endif; ?>
-							<li>
-								<a href="/story-map.php">Stories</a>
-							</li>
-							<li>
-								<a href="/about.php">About me</a>
-							</li>
-							<li>
-								<a href="/contact.php">Contact</a>
-							</li>
-						</ul>
-					</div>
-				</div>
-
-
-				<div class="header <?php echo ( isset( $start ) ? '' : 'other' ); ?>">
-					<ul class="nav">
+					<ul>
 						<?php if( empty( $start ) ) : ?>
 							<li>
 								<a href="/">Start</a>
@@ -55,13 +32,34 @@
 							<a href="/contact.php">Contact</a>
 						</li>
 					</ul>
-
-					<ul class="lang">
-						<li>
-							<a class="sv sel" href="/sv/">Svenska</a>
-						</li>
-						<li>
-							<a class="en" href="/en/">English</a>
-						</li>
-					</ul>
 				</div>
+
+				<div class="innerwrapper">
+					<div class="icon-menu"></div>
+					<div class="header <?php echo ( isset( $start ) ? '' : 'other' ); ?>">
+						<ul class="nav">
+							<?php if( empty( $start ) ) : ?>
+								<li>
+									<a href="/">Start</a>
+								</li>
+							<?php endif; ?>
+							<li>
+								<a href="/story-map.php">Stories</a>
+							</li>
+							<li>
+								<a href="/about.php">About me</a>
+							</li>
+							<li>
+								<a href="/contact.php">Contact</a>
+							</li>
+						</ul>
+
+						<ul class="lang">
+							<li>
+								<a class="sv sel" href="/sv/">Svenska</a>
+							</li>
+							<li>
+								<a class="en" href="/en/">English</a>
+							</li>
+						</ul>
+					</div>

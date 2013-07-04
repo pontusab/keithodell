@@ -47,26 +47,9 @@ $(document).ready(function()
 	$('.icon-menu').click( function() 
 	{
 		$('.menu').toggleClass('expanded');
+		$('.innerwrapper').toggleClass('closed');
 	});
 
-	$(document).keydown( function(e) 
-    {
-        var keyCode = e.keyCode || e.which,
-        arrow = {up: 38, down: 40 };
-        
-        switch( keyCode ) 
-        {
-            case arrow.down: 
-                $('.list').addClass('closed');
-				$('.map').addClass('expanded');
-            break;
-            
-            case arrow.up: 
-                $('.list').removeClass('closed');
-				$('.map').removeClass('expanded');
-            break;
-        }
-    });
 
 	// Add expanded to the storiespicker
 	$('.toggle').click( function() 
@@ -77,20 +60,26 @@ $(document).ready(function()
 	});
 
 
-	$('.control a').click( function() 
+	$('.control div').click( function() 
 	{
-		// var currentZoom = map.getZoom();
-		// console.log(currentZoom);
+		var currentZoom = map.getZoom();
 
-		var oldValue = 2;
+		if( $(this).text() == '+') 
+		{
+			if( currentZoom < 5 )
+			{
+				var currentZoom = parseFloat( currentZoom ) + 1;
+			}
+		} 
+		else
+		{
+			if( currentZoom > 2 )
+			{
+				var currentZoom = parseFloat( currentZoom ) - 1;
+			}
+		}
 
-		// if( this.text() == '+') 
-		// {
-		// 	var newVal = parseFloat( oldValue ) + 1;
-		// } 
-
-  		// map.setZoom(newVal);
-
+  		map.setZoom( currentZoom );
 	});
 
 
