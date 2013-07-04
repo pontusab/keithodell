@@ -4,13 +4,11 @@ include 'components/header.php';
 ?>
 <div class="stories">
 	<div class="container">
-
-
 		<div class="list">
 			<div class="toggle"></div>
 			<div class="story-items">
   				<ul class="slides">
-					<li>
+					<li data-id="0">
 						<div class="block">
 							<a href="story.php">
 								<div class="vignette"></div>
@@ -27,7 +25,7 @@ include 'components/header.php';
 							</a>
 						</div>
 					</li>
-					<li>
+					<li data-id="1">
 						<div class="block">
 							<a href="story.php">
 								<div class="vignette"></div>
@@ -44,7 +42,7 @@ include 'components/header.php';
 							</a>
 						</div>
 					</li>
-					<li>
+					<li data-id="2">
 						<div class="block">
 							<a href="story.php">
 								<div class="vignette"></div>
@@ -61,7 +59,7 @@ include 'components/header.php';
 							</a>
 						</div>
 					</li>
-					<li>
+					<li data-id="3">
 						<div class="block">
 							<a href="story.php">
 								<div class="vignette"></div>
@@ -78,7 +76,7 @@ include 'components/header.php';
 							</a>
 						</div>
 					</li>
-					<li>
+					<li data-id="4">
 						<div class="block">
 							<a href="story.php">
 								<div class="vignette"></div>
@@ -95,7 +93,7 @@ include 'components/header.php';
 							</a>
 						</div>
 					</li>
-					<li>
+					<li data-id="5">
 						<div class="block">
 							<a href="story.php">
 								<div class="vignette"></div>
@@ -112,7 +110,7 @@ include 'components/header.php';
 							</a>
 						</div>
 					</li>
-					<li>
+					<li data-id="6">
 						<div class="block">
 							<a href="story.php">
 								<div class="vignette"></div>
@@ -129,7 +127,7 @@ include 'components/header.php';
 							</a>
 						</div>
 					</li>
-					<li>
+					<li data-id="7">
 						<div class="block">
 							<a href="story.php">
 								<div class="vignette"></div>
@@ -146,7 +144,7 @@ include 'components/header.php';
 							</a>
 						</div>
 					</li>
-					<li>
+					<li data-id="8">
 						<div class="block">
 							<a href="story.php">
 								<div class="vignette"></div>
@@ -163,7 +161,7 @@ include 'components/header.php';
 							</a>
 						</div>
 					</li>
-					<li>
+					<li data-id="9">
 						<div class="block">
 							<a href="story.php">
 								<div class="vignette"></div>
@@ -180,7 +178,7 @@ include 'components/header.php';
 							</a>
 						</div>
 					</li>
-					<li>
+					<li data-id="10">
 						<div class="block">
 							<a href="story.php">
 								<div class="vignette"></div>
@@ -197,7 +195,7 @@ include 'components/header.php';
 							</a>
 						</div>
 					</li>
-					<li>
+					<li data-id="11">
 						<div class="block">
 							<a href="story.php">
 								<div class="vignette"></div>
@@ -218,44 +216,29 @@ include 'components/header.php';
 			</div>
 		</div>
 
-		<div class="infobox-wrapper">
-		    <div class="info" id="infobox0">
-		    	France
-		    </div>
-		    <div class="info" id="infobox1">
-		    	<span class="tooltip">
-			    	<div class="image-wrapper">
-			    		<img src="/assets/tmp/small.jpg" alt="" width="50" height="50">
-			    	</div>
-			    	
-			    	<span class="name">Radisson Blu Hotel, Berlin</span>
-			      <i></i>
-			    </span>
-		 
-		    </div>
-		    <div class="info" id="infobox2">
-		    	New York
-		    </div>
-		    <div v id="infobox3">
-		    	Spain
-		    </div>
-		    <div class="info" id="infobox4">
-		    	Stockholm
-		    </div>
-		    <div class="info" id="infobox5">
-		    	Africa
-		    </div>
-		</div>
-
 		<div class="map">
-			<div class="control">
-				<a class="in">+</a>
-				<a class="out">-</a>
-			</div>
-
 			<div id="map-canvas"></div>
 		</div>
 	</div>
 </div>
+
+<script type="text/javascript">
+	var locations = [
+	    ['France', 46.227638,2.213749, '/story.php', 'Read about International Chocolate'],
+	    ['Linköping', 58.410807,15.621373, '/story.php', 'Read about International Chocolate'],
+	    ['New York', 40.714353,-74.005973, '/story.php', 'Read about International Chocolate'],
+	    ['Spain', 40.463667,-3.74922, '/story.php', 'Read about International Chocolate'],
+	    ['Stockholm', 59.32893,18.06491, '/story.php', 'Read about International Chocolate'],
+	    ['Africa', -8.783195,34.508523, '/story.php', 'Read about International Chocolate'],
+	    ['Canada', 56.130366,-106.346771, '/story.php', 'Read about International Chocolate'],
+	    ['Greenland', 71.706936,-42.604303, '/story.php', 'Read about International Chocolate'],
+	    ['Cuba', 21.521757,-77.781167, '/story.php', 'Read about International Chocolate'],
+	    ['Ireland', 53.41291,-8.24389, '/story.php', 'Read about International Chocolate'],
+	    ['Paraguay', -23.442503,-58.443832, '/story.php', 'Read about International Chocolate'],
+	    ['New Zeland', -40.900557,174.885971, '/story.php', 'Read about International Chocolate'],
+	    ['Madagascar', -18.766947,46.869107, '/story.php', 'Read about International Chocolate'],
+	    ['India', 20.593684,78.96288, '/story.php'],
+	];
+</script>
 
 <?php include 'components/footer.php'; ?>

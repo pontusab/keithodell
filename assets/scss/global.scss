@@ -788,6 +788,10 @@ h3 {
 		@include icon(down-open-big);
 	}
 
+	.flex-direction-nav {
+		list-style: none;
+	}
+
 	.flex-prev,
 	.flex-next {
 		position: absolute;
@@ -816,34 +820,12 @@ h3 {
 		}
 	}
 
-	// .flex-disabled {
-	// 	color: #000;
-	// 	&:hover {
-	// 		background: #000;
-	// 	}
-	// }
-
-	.control {
-		position: absolute;
-		left: 20px;
-		top: 20px;
-		z-index: 100;
-		line-height: 28px;
-		text-align: center;
-		background: rgba(255,255,255,0.6);
-		font-weight: normal;
+	.flex-prev {
+		border-right: 1px solid rgba(255,255,255,0.2);
 	}
 
-	.in,
-	.out {
-		color: #867a65;
-		display: block;
-		float: left;
-		border: 1px solid #aca08d;
-		width: 28px;
-		height: 28px;
-		font-size: 23px;
-		font-weight: bold;
+	.flex-next {
+		border-left: 1px solid rgba(255,255,255,0.2);
 	}
 
 	.infobox-wrapper {
@@ -855,35 +837,6 @@ h3 {
 		height: auto;
 		padding: 10px;
 		background: #252622;
-
-		.image-wrapper {
-			float: left;
-			border: 1px solid #D5D5D5;
-			padding: 3px;
-			width: 50px;
-			height: 50px;
-			display: inline-block;
-			background: #fff;
-			margin-right: 10px;
-		}
-
-		i {
-			display: block;
-			position: absolute;
-			width: 17px;
-			height: 6px;
-			bottom: -6px;
-			left: 50%;
-			margin-left: -9px;
-			background:  url(/assets/img/bubble-arrow.png);
-		}
-	}
-
-	.out {
-		border: none;
-		border-right: 1px solid #aca08d;
-		border-top: 1px solid #aca08d;
-		border-bottom: 1px solid #aca08d;
 	}
 
 	.flex-prev {
@@ -972,7 +925,7 @@ h3 {
 
 		.meta {
 			font-family: "Montserrat", sans-serif;
-			font-size: 14px;
+			font-size: 12px;
 			letter-spacing: 3px;
 			text-transform: uppercase;
 			color: #fff;
@@ -1005,6 +958,10 @@ h3 {
 		.vignette {
 			z-index: 50;
 			position: absolute;
+		}
+
+		.btn {
+			padding: 9px 18px;
 		}
 
 		img {

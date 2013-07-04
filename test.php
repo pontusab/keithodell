@@ -1,192 +1,74 @@
-<!-- <div class="nav-bar"> -->
-			<!-- <div class="sort">
-				<form action="" method="get">
-					<div class="row">
-						<select id="category" name="category">
-							<option value="none">Category</option>
-							<option value="adventure">Adventure</option>
-							<option value="market">Market</option>
-							<option value="fishing">Fishing</option>
-							<option value="trip">Trip</option>
-						</select>
-					</div>
+<html>
+<head>
+<script src='http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js' type='text/javascript'></script>
+<script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=false"></script>
+<script type="text/javascript">
 
-					<div class="row">
-						<select id="contry" name="contry">
-							<option value="none">Contry</option>
-							<option value="adventure">Sweden</option>
-							<option value="market">USA</option>
-							<option value="fishing">Spain</option>
-							<option value="trip">Italy</option>
-						</select>
-					</div>
+  var markers;
+  var map;
+    var infowindow = new google.maps.InfoWindow();
 
-					<div class="row submit">
-						<input type="submit" class="btn" value="Filter">
-					</div>
+  function initialize() {
+    markers = new Array();
+    var mapOptions = {
+      zoom: 6,
+      mapTypeId: google.maps.MapTypeId.ROADMAP,
+    };
 
-				</form>
-			</div> -->
+    map = new google.maps.Map(document.getElementById("map"),
+            mapOptions);
 
-			<!-- <ul class="clearfix">
-				<li data-story-id="1">
-					<div class="img">
-						<div class="vignette"></div>
-						<img src="http://keith.pontusab.se/assets/tmp/storie1.jpg"/>
-					</div>
+    $("#map_list ul li").each(function(index) {
 
-					<div class="copy">
-						<h2>A single rule for wine tasting</h2>
-						<p>
-							It was 2009, and I thought Yellow Tail produced a great wine. When it was up to me to choose wine for a party.
-						</p>
+        var marker = new google.maps.Marker({
+        position: new google.maps.LatLng($(this).children(".marker_long").text(), $(this).children(".marker_lat").text()),
+        map: map,
+        animation: google.maps.Animation.DROP,
+        title : $(this).children(".marker_title").text(),
+        brief: $(this).children(".marker_brief").text()
+        });
 
-						<div class="meta">
-							<a href="#"><span class="icon-location"></span>Stockholm, Sweden</a>
-							<a href="#"><span class="icon-tag"></span>Adventure</a>
-						</div>
+        google.maps.event.addListener(marker, 'click', function() {
+          map.panTo(new google.maps.LatLng(marker.position.Sa, marker.position.Ta));
+          infowindow.setContent(marker.brief);  
+          infowindow.open(map,marker);
+        });
 
-					</div>
-				</li>
+        markers.push(marker);
+    });
+  }
 
-				<li data-story-id="1">
-					<div class="img">
-						<div class="vignette"></div>
-						<img src="http://keith.pontusab.se/assets/tmp/storie2.jpg"/>
-					</div>
+$(document).ready(function(){
+  $("#map_list ul li").click(function(){
+        marker = markers[this.id];
+        markerContent = $("div.marker_brief",this).html();
+        varLong = $("div.marker_long",this).html();
+        varLat = $("div.marker_lat",this).html();
+        map.panTo(new google.maps.LatLng(varLong, varLat));
+        infowindow.setContent(markerContent)
+        infowindow.open(map,marker);
 
-					<div class="copy">
-						<h2>A single rule for wine tasting</h2>
-						<p>
-							It was 2009, and I thought Yellow Tail produced a great wine. When it was up to me to choose wine for a party.
-						</p>
-
-						<div class="meta">
-							<a href="#"><span class="icon-location"></span>Stockholm, Sweden</a>
-							<a href="#"><span class="icon-tag"></span>Adventure</a>
-						</div>
-					
-					</div>
-				</li>
-
-				<li data-story-id="1">
-					<div class="img">
-						<div class="vignette"></div>
-						<img src="http://keith.pontusab.se/assets/tmp/storie3.jpg"/>
-					</div>
-
-					<div class="copy">
-						<h2>A single rule for wine tasting</h2>
-						<p>
-							It was 2009, and I thought Yellow Tail produced a great wine. When it was up to me to choose wine for a party.
-						</p>
-
-						<div class="meta">
-							<a href="#"><span class="icon-location"></span>Stockholm, Sweden</a>
-							<a href="#"><span class="icon-tag"></span>Adventure</a>
-						</div>
-					
-					</div>
-				</li>
-
-				<li data-story-id="1">
-					<div class="img">
-						<div class="vignette"></div>
-						<img src="http://keith.pontusab.se/assets/tmp/storie4.jpg"/>
-					</div>
-
-					<div class="copy">
-						<h2>A single rule for wine tasting</h2>
-						<p>
-							It was 2009, and I thought Yellow Tail produced a great wine. When it was up to me to choose wine for a party.
-						</p>
-
-						<div class="meta">
-							<a href="#"><span class="icon-location"></span>Stockholm, Sweden</a>
-							<a href="#"><span class="icon-tag"></span>Adventure</a>
-						</div>
-					
-					</div>
-				</li>
-
-				<li data-story-id="1">
-					<div class="img">
-						<div class="vignette"></div>
-						<img src="http://keith.pontusab.se/assets/tmp/storie5.jpg"/>
-					</div>
-
-					<div class="copy">
-						<h2>A single rule for wine tasting</h2>
-						<p>
-							It was 2009, and I thought Yellow Tail produced a great wine. When it was up to me to choose wine for a party.
-						</p>
-
-						<div class="meta">
-							<a href="#"><span class="icon-location"></span>Stockholm, Sweden</a>
-							<a href="#"><span class="icon-tag"></span>Adventure</a>
-						</div>
-					
-					</div>
-				</li>
-
-				<li data-story-id="1">
-					<div class="img">
-						<div class="vignette"></div>
-						<img src="http://keith.pontusab.se/assets/tmp/storie6.jpg"/>
-					</div>
-
-					<div class="copy">
-						<h2>A single rule for wine tasting</h2>
-						<p>
-							It was 2009, and I thought Yellow Tail produced a great wine. When it was up to me to choose wine for a party.
-						</p>
-
-						<div class="meta">
-							<a href="#"><span class="icon-location"></span>Stockholm, Sweden</a>
-							<a href="#"><span class="icon-tag"></span>Adventure</a>
-						</div>
-					
-					</div>
-				</li>
-
-				<li data-story-id="1">
-					<div class="img">
-						<div class="vignette"></div>
-						<img src="http://keith.pontusab.se/assets/tmp/storie7.jpg"/>
-					</div>
-
-					<div class="copy">
-						<h2>A single rule for wine tasting</h2>
-						<p>
-							It was 2009, and I thought Yellow Tail produced a great wine. When it was up to me to choose wine for a party.
-						</p>
-
-						<div class="meta">
-							<a href="#"><span class="icon-location"></span>Stockholm, Sweden</a>
-							<a href="#"><span class="icon-tag"></span>Adventure</a>
-						</div>
-					
-					</div>
-				</li>
-
-			</ul>
-
-			<div class="paging">
-				<ul>
-					<li>
-						<a href="#">1</a>
-						<a href="#">2</a>
-						<a href="#" class="sel">3</a>
-						<a href="#">4</a>
-						<a href="#">5</a>
-						<span class="elipse">...</span>
-						<a href="#">18</a>
-					</li>
-				</ul>
-
-				<div class="switch">
-					<a class="prev icon-left-open-big" alt="Previous story"  href="#"></a>
-					<a class="next icon-right-open-big" alt="Next story" href="#"></a>
-				</div>
-			</div>
-		</div> -->
+  });
+});
+</script>
+</head>
+<body onload='initialize();'>
+<div id="map" style="width: 450px; height: 350px;"></div>
+<div id="map_list">
+<ul>
+<li id="0">
+    <div class="marker_title">Salt Lake City</div>
+    <div class="marker_brief">Capital of Utah</div>
+    <div class="marker_long">40.763901</div>
+    <div class="marker_lat">-111.901245</div>
+</li>
+<li id="1">
+    <div class="marker_title">Provo</div>
+    <div class="marker_brief">Location of BYU</div>
+    <div class="marker_long">40.25228</div>
+    <div class="marker_lat">-111.659546</div>
+</li>
+</ul>
+</div>
+</body>
+</html>
