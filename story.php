@@ -3,7 +3,7 @@
 <div id="story">
 	<div class="container">
 
-		<div class="buttons">
+		<div class="controllers">
 			<a class="close" alt="Close story" href="story-map.php"></a>
 			<a class="prev" alt="Previous story"  href="story.php"></a>
 			<a class="next" alt="Next story" href="story.php"></a>

@@ -307,7 +307,7 @@ h3 {
 	z-index: 30;
 	background: #fff;
 
-	.buttons {
+	.controllers {
 		position: fixed;
 		right: 20px;
 		top: 20px;
@@ -700,6 +700,10 @@ h3 {
 	padding: 20px 0 0;
 	margin: 0 0 20px 0;
 	text-align: center;
+
+	.buttons {
+		display: none;
+	}
 
 	a {
 		color: #e2e2e2;

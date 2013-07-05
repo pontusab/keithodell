@@ -17,11 +17,9 @@
 
 				<div class="menu">
 					<ul>
-						<?php if( empty( $start ) ) : ?>
-							<li>
-								<a href="/">Start</a>
-							</li>
-						<?php endif; ?>
+						<li>
+							<a href="/">Start</a>
+						</li>
 						<li>
 							<a href="/story-map.php">Stories</a>
 						</li>

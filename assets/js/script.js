@@ -48,8 +48,8 @@ $(document).ready(function()
 	// Add expanded to mobilemenu
 	$('.icon-menu').click( function() 
 	{
-		$('.menu').toggleClass('expanded');
 		$('.innerwrapper').toggleClass('closed');
+		$('.menu').toggleClass('expanded');
 	});
 
 
@@ -57,6 +57,7 @@ $(document).ready(function()
 	$('.toggle').click( function() 
 	{
 		google.maps.event.trigger( map, 'resize' );
+		map.setZoom( 2 );
 		$('.list').toggleClass('closed');
 		$('.map').toggleClass('expanded');
 	});
@@ -87,7 +88,7 @@ $(document).ready(function()
 
 
 	// Control the map by mouseover 
-	$('.slides li').mouseenter( function() 
+	$('.stories .slides li').mouseenter( function() 
 	{
 		index = $(this).data('id');
 		marker = markers[index];
@@ -98,9 +99,56 @@ $(document).ready(function()
 	});
 
 	// Control the map by mouseout 
-	$('.slides li').mouseout( function() 
+	$('.stories .slides li').mouseout( function() 
 	{
 		marker.setIcon( image );
+	});
+
+	$('.share .fb').sharrre(
+	{
+		share: 
+		{
+			facebook: true
+		},
+		enableHover: false,
+		enableTracking: true,
+		enableCounter: false,
+		click: function(api, options)
+		{
+			api.simulateClick();
+			api.openPopup('facebook');
+		}
+	});
+
+	$('.share .gp').sharrre(
+	{
+		share: 
+		{
+			googlePlus: true
+		},
+		enableHover: false,
+		enableTracking: true,
+		enableCounter: false,
+		click: function(api, options)
+		{
+			api.simulateClick();
+			api.openPopup('googlePlus');
+		}
+	});
+
+	$('.share .tw').sharrre(
+	{
+		share: 
+		{
+			twitter: true
+		},
+		enableHover: false,
+		enableTracking: true,
+		enableCounter: false,
+		click: function(api, options){
+			api.simulateClick();
+			api.openPopup('twitter');
+		}
 	});
 });
 
