@@ -2,6 +2,8 @@
 @codekit-prepend "vendors/jquery.flexslider-min.js"
 @codekit-prepend "vendors/infobubble-compiled.js"
 @codekit-prepend "vendors/googlemaps.js"
+@codekit-prepend "vendors/jquery.sharrre-1.3.4.min.js"
+
 */
 
 $(document).ready(function() 
@@ -73,7 +75,7 @@ $(document).ready(function()
 		} 
 		else
 		{
-			if( currentZoom > 2 )
+			if( currentZoom > 0 )
 			{
 				var currentZoom = parseFloat( currentZoom ) - 1;
 			}

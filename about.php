@@ -49,9 +49,9 @@ include 'components/header.php';
 		</div>
 
 		<div class="share">
-			<a href="#" class="fb icon-facebook-circled"></a>
-			<a href="#" class="gp icon-gplus-circled"></a>
-			<a href="#" class="tw icon-twitter-circled"></a>
+			<a href="#" class="fb"></a>
+			<a href="#" class="gp"></a>
+			<a href="#" class="tw"></a>
 		</div>
 
 	</div>
