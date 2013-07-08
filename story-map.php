@@ -1,8 +1,6 @@
-<?php
-$stories = true;
-include 'components/header.php'; 
-?>
+<?php include 'components/header.php'; ?>
 <div class="stories">
+
 	<div class="container">
 		<div class="list">
 			<div class="toggle"></div>
@@ -69,7 +67,7 @@ include 'components/header.php';
 								<div class="content">
 									<h2>International Chocolate</h2>
 									<div class="meta">
-										<span>Canada</span>
+										<span>Spain</span>
 									</div>
 
 									<div class="btn">Read story</div>
@@ -86,7 +84,7 @@ include 'components/header.php';
 								<div class="content">
 									<h2>International Chocolate</h2>
 									<div class="meta">
-										<span>Greenland</span>
+										<span>Stockholm</span>
 									</div>
 
 									<div class="btn">Read story</div>
@@ -103,7 +101,7 @@ include 'components/header.php';
 								<div class="content">
 									<h2>International Chocolate</h2>
 									<div class="meta">
-										<span>Ireland</span>
+										<span>Africa</span>
 									</div>
 
 									<div class="btn">Read story</div>
@@ -120,7 +118,7 @@ include 'components/header.php';
 								<div class="content">
 									<h2>International Chocolate</h2>
 									<div class="meta">
-										<span>Cuba</span>
+										<span>Canada</span>
 									</div>
 
 									<div class="btn">Read story</div>
@@ -137,7 +135,7 @@ include 'components/header.php';
 								<div class="content">
 									<h2>International Chocolate</h2>
 									<div class="meta">
-										<span>France</span>
+										<span>Greenland</span>
 									</div>
 
 									<div class="btn">Read story</div>
@@ -154,7 +152,7 @@ include 'components/header.php';
 								<div class="content">
 									<h2>International Chocolate</h2>
 									<div class="meta">
-										<span>Africa</span>
+										<span>Cuba</span>
 									</div>
 
 									<div class="btn">Read story</div>
@@ -171,7 +169,7 @@ include 'components/header.php';
 								<div class="content">
 									<h2>International Chocolate</h2>
 									<div class="meta">
-										<span>Madagascar</span>
+										<span>Ireland</span>
 									</div>
 
 									<div class="btn">Read story</div>
@@ -188,7 +186,7 @@ include 'components/header.php';
 								<div class="content">
 									<h2>International Chocolate</h2>
 									<div class="meta">
-										<span>New York</span>
+										<span>Paraguay</span>
 									</div>
 
 									<div class="btn">Read story</div>
@@ -205,7 +203,7 @@ include 'components/header.php';
 								<div class="content">
 									<h2>International Chocolate</h2>
 									<div class="meta">
-										<span>Italy</span>
+										<span>New Zeland</span>
 									</div>
 
 									<div class="btn">Read story</div>
@@ -216,7 +214,6 @@ include 'components/header.php';
 				</ul>
 			</div>
 		</div>
-
 		<div class="map">
 			<div class="control">
 				<div class="in">+</div>
@@ -241,8 +238,6 @@ include 'components/header.php';
 	    ['Ireland', 53.41291,-8.24389, '/story.php', 'Read about International Chocolate'],
 	    ['Paraguay', -23.442503,-58.443832, '/story.php', 'Read about International Chocolate'],
 	    ['New Zeland', -40.900557,174.885971, '/story.php', 'Read about International Chocolate'],
-	    ['Madagascar', -18.766947,46.869107, '/story.php', 'Read about International Chocolate'],
-	    ['India', 20.593684,78.96288, '/story.php'],
 	];
 </script>
 

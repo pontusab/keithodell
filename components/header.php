@@ -5,7 +5,10 @@
 	<title>Keith O'dell</title>
 	<meta name="keywords" content="Relevanta nyckelord för detta dokument." />
 	<meta name="description" content="En kort beskrivning av dokumentets syfte och innehåll." />
-	<meta name="viewport" content="width=device-width,initial-scale=1.0" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+	<link rel="apple-touch-icon" href="/assets/img/apple-touch-icon-iphone.png" />
+    <link rel="apple-touch-icon" sizes="72x72" href="/assets/img/apple-touch-icon-ipad.png" />
+    <link rel="apple-touch-icon" sizes="114x114" href="/assets/img/apple-touch-icon-iphone-retina-display.png" />
 	<link href='http://fonts.googleapis.com/css?family=Libre+Baskerville:400,400italic' rel='stylesheet' type='text/css'>
 	<link href='http://fonts.googleapis.com/css?family=Montserrat:700' rel='stylesheet' type='text/css'>
 	<link rel="stylesheet" href="/assets/css/screen-min.css?v=1" />
