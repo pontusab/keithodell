@@ -1,0 +1,62 @@
+// OBS! Den här filen (_coopglyphs.scss) skrivs över - gör ändringar i Dropbox (Coop-NyDesign/coopglyphs/_coopglyphs.template.scss)
+
+@charset "UTF-8";
+
+@font-face {
+    font-family: 'coopglyphs';
+    src: url('../fonts/coopglyphs/coopglyphs.eot');
+    src: url('../fonts/coopglyphs/coopglyphs.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/coopglyphs/coopglyphs.woff') format('woff'),
+         url('../fonts/coopglyphs/coopglyphs.ttf') format('truetype'),
+         url('../fonts/coopglyphs/coopglyphs.svg#coopglyphs') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+$glyph-names: lab notepad bag creditcard wallet tree leaf flower calendar cog trash clock thumbup comment truck coopburst coopflower cooptalk1 cooptalk2 cooptalk3 cooptalk4 cooptalk5 cooptalk6 cooparrow coopdream coopshape1 coopshape2 coopshape3 tag knifefork linkarrow navarrow magnify star note plane flipflop book heart football info clip cart creditcardplus creditcardinfinite mobile facebook fiskdisk recept kamera filmrulle bageri delikatess svenskaspel posten ticnet atg streckkod elkontakt kaffekopp burger laptop systembolaget buss dhl dollar linkarrowleft fullscreen printer loader01 loader02 loader03 loader04 loader05 loader06 loader07 loader08 loader09 loader10 loader11 loader12 maximize arrowleft padlock userm userf heels house family plus minus cooplogo closex awaylink menu clover linkarrowup linkarrowdown;
+$glyph-characters: "\f000" "\f001" "\f002" "\f003" "\f004" "\f005" "\f006" "\f007" "\f008" "\f009" "\f00a" "\f00b" "\f00c" "\f00d" "\f00e" "\f010" "\f011" "\f012" "\f013" "\f014" "\f015" "\f016" "\f017" "\f018" "\f019" "\f01a" "\f01b" "\f01c" "\f01d" "\f01e" "\f021" "\f022" "\f023" "\f024" "\f025" "\f026" "\f027" "\f028" "\f029" "\f02a" "\f02b" "\f02c" "\f02d" "\f02e" "\f02f" "\f030" "\f031" "\f032" "\f033" "\f034" "\f035" "\f036" "\f037" "\f038" "\f039" "\f03a" "\f03b" "\f03c" "\f03d" "\f03e" "\f040" "\f041" "\f042" "\f043" "\f044" "\f045" "\f046" "\f047" "\f048" "\f049" "\f04a" "\f04b" "\f04c" "\f04d" "\f04e" "\f050" "\f051" "\f052" "\f053" "\f054" "\f055" "\f056" "\f057" "\f058" "\f059" "\f05a" "\f05b" "\f05c" "\f05d" "\f05e" "\f060" "\f061" "\f062" "\f063" "\f064" "\f065" "\f066" "\f067";
+
+$glyph-classes: ();
+$glyph-pseudo: ();
+
+@for $i from 1 to length($glyph-names) + 1 {
+	$glyph-name: nth($glyph-names, $i);
+	$glyph-character: nth($glyph-characters, $i);
+
+	$glyph-classes: join($glyph-classes, unquote(".glyph-#{$glyph-name} "), comma);
+	$glyph-pseudo: join($glyph-pseudo, unquote(".glyph-#{$glyph-name}:before "), comma);
+	$glyph-pseudo: join($glyph-pseudo, unquote(".glyph-#{$glyph-name}-before:before "), comma);
+
+	.glyph-#{$glyph-name},
+	.glyph-#{$glyph-name}-before {
+		&:before { content: "#{$glyph-character}" ; }
+	}
+}
+
+#{$glyph-classes} {
+	background: none;
+	border: none;
+	padding: 0;
+
+	.legacyandroid & span,
+	.generatedcontent & span {
+		border: 0 !important;
+		clip: rect(0 0 0 0);
+		clip: rect(0, 0, 0, 0);
+		height: 1px !important;
+		margin: -1px !important;
+		overflow: hidden;
+		padding: 0 !important;
+		position: absolute !important;
+		width: 1px !important;
+	}
+}
+.icon, #{$glyph-pseudo} {
+	font-family: coopglyphs;
+	font-size: .7em;
+	font-style: normal;
+	font-weight: normal;
+	margin-right: 0.3em;
+	text-decoration: none;
+}
+.no-fontface .icon { display: none; }

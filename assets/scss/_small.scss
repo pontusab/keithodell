@@ -1,0 +1,221 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    background: #fff;
+}
+
+h1 {
+	font-size: 1.2em;
+}
+
+.content p:first-of-type::first-letter {
+	font-size: 55px;
+}
+
+.icon-menu {
+	color: #000;
+	font-size: 30px;
+	display: block;
+	position: absolute;
+	left: 10px;
+	top: 13px;
+	z-index: 10000;
+}
+
+.innerwrapper {
+	width: 100%;
+	height: 100%;
+}
+
+.innerwrapper,
+.menu {
+	-webkit-transition: all 0.2s ease-out;
+	-moz-transition: all 0.2s ease-out;
+	-ms-transition: all 0.2s ease-out;
+	-o-transition: all 0.2s ease-out;
+	transition: all 0.2s ease-out;
+}
+
+.stories .map {
+	height: 100%;
+	width: 100%;
+	position: absolute;
+}
+
+.innerwrapper {
+	position: absolute;
+
+	&.closed {
+		position: fixed;
+		-webkit-transition-duration: 200ms;
+		-webkit-transition-timing-function: ease-in;
+		-webkit-transform: translate3d(260px, 0px, 0px);
+	}
+}
+
+.inner.closed {
+	position: fixed;
+	-webkit-transition-duration: 200ms;
+	-webkit-transition-timing-function: ease-in;
+	-webkit-transform: translate3d(260px, 0px, 0px);
+}
+
+.menu {
+	position: fixed;
+	width: 259px;
+	height: 100%;
+	min-height: 100%;
+	left: -260px;
+	background: #eae4d6;
+	z-index: 1;
+	bottom: 0;
+	top: 0;
+	border-right: 1px solid #c5bfb3;
+	display: block;
+
+	&.expanded {
+		position: fixed;
+		left: 0;
+	}
+
+	ul {
+		list-style: none;
+		padding: 65px 0 0;
+		margin: 0;
+	}
+
+	li {
+		padding: 15px;
+		border-bottom: 1px solid #fff;
+
+		&:first-child {
+			border-top: 1px solid #fff;
+		}
+
+		a {
+			color: #fff;
+			display: block;
+			text-decoration: none;
+		}
+
+		&:hover,
+		&:focus {
+			background: #c5bfb3;
+		}
+	}
+}
+
+.header {
+	z-index: 90;
+	position: absolute;
+	.nav {
+		display: none;
+	}
+}
+
+.no-img {
+	.page {
+		.container {
+			margin-top: 0;
+		}
+	}
+}
+
+
+.home {
+    .slides,
+    .flex-control-nav {
+        display: none;
+    }
+
+    .btn {
+    	width: 53%;
+    }
+}
+
+#story .content-1 {
+	top: 65px;
+	width: 100%;
+}
+
+.list,
+.vignette {
+	display: none;
+}
+
+.intro {
+	width: 100%;
+	position: static;
+	.inner {
+		width: 92%;
+		padding: 80px 4%;
+	}
+}
+
+
+#story {
+	position: static;
+	.content-1,
+	.content-2 {
+		width: 100%;
+	}
+
+	.controllers {
+		display: none;
+	}
+
+	.content {
+		padding: 20px 20px;
+	}
+
+	.content-2 {
+		margin: 0;
+		padding: 100px 0 0;
+		overflow: auto;
+	}
+
+	.container {
+		position: static;
+	}
+
+	.meta {
+		padding: 0;
+		.inner {
+			padding: 30px 0 10px 0;
+		}
+	}
+}
+
+.page {
+	.images {
+		display: none;
+	}
+
+	.head {
+		width: 80%;
+		padding: 20px 0 30px 0;
+	}
+
+	.form {
+		width: 90%;
+	}
+
+	&.text {
+		.content {
+			padding: 0 20px;
+			-moz-column-count: 1;
+			-webkit-column-count: 1;
+			column-count: 1;
+			-moz-column-gap: 0;
+			-webkit-column-gap: 0;
+			column-gap: 0;
+		}
+	}
+
+	.container {
+		margin: 0;
+		padding-top: 80px;
+	}
+}

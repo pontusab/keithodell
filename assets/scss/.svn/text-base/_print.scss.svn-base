@@ -1,0 +1,108 @@
+﻿body {
+	padding: 0;
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+	background: #fff;
+	margin: 50px 0;
+}
+
+#page { width: auto; margin: 0;}
+
+.sub,
+.mod {
+	position: static !important;
+	display: block !important;
+	opacity: 1 !important;
+}
+
+#hud,
+#masthead,
+#footer,
+#hud,
+#secondary,
+#site-nav-sub,
+.sharing,
+.trail-nav {
+	display: none !important;
+	visibility: hidden !important;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+}
+
+.separator-heading {
+	span {
+		background: #fff !important;
+	}
+}
+
+.wrapper {
+	padding-right: 0;
+	width: 100%;
+}
+
+.layout-3 {
+	> .sub {
+		width: 100%;
+	}
+
+	+ .sub {
+		display: none;
+	}
+}
+
+// Recipe page
+
+.recipe {
+	.offer-item-mod,
+	.button-group,
+	.text-mod,
+	.dinner-tip-mod,
+	.recipe-review-list,
+	.form-mod,
+	#similar-recipes,
+	.fullscreen {
+		display: none;
+	}
+
+	> .sub:last-child {
+		float: right;
+	}
+
+	h1 { font-weight: bold !important;}
+
+	.instructions {
+
+		p {
+			width: 100% !important;
+		}
+
+		.notes {
+			margin-top: -25px !important;
+			width: auto !important;
+
+			li {
+				font-size: 12px !important;
+				margin: 0 !important;
+				padding: 0 !important;
+			}
+		}
+	}
+
+	.ingredient-list ul li.eco::before,
+	.ingredient-list span::before {
+		content: "♣" !important;
+		font-family: Arial !important;
+	}
+
+	.glyph-clock::before, .glyph-clock-before::before, .store-item .store-opening-hours li::before, .store-list article .store-opening-hours li::before {
+		font-family: Arial !important;
+		content: "Tid:";
+		font-size: 12px !important;
+		padding: 0 5px 0 0 !important;
+		margin: 0 !important;
+		top: 0 !important;
+		width: auto !important;
+	}
+
+}

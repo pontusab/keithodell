@@ -1,0 +1,29 @@
+@charset "UTF-8";
+
+/* Screen styles
+ * Master stylesheet to be included for the fully enhanced view.
+ * Import this file using the following HTML or equivalent:
+ * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+
+// Global variables, defaults and custom mixins
+@import "base";
+// Fonts
+@import "fonts";
+// Glyphs
+@import "coopglyphs";
+// Sprites
+@import "sprites";
+// Reset and some normalizing
+@import "reset";
+// Scaffolding - grids, layout models etc
+@import "scaffolding";
+// Patterns - responsive components, units etc
+@import "patterns";
+// Global and shared styles
+@import "global";
+
+
+
+/* Show page when all CSS has loaded */
+html.enhanced body,
+html.js.enhanced body { visibility: visible !important; }

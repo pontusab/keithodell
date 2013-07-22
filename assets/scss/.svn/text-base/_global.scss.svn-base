@@ -1,0 +1,874 @@
+@charset "UTF-8";
+
+// Global variables, defaults and custom mixins
+@import "base";
+
+/* Document setup
+--------------------------------------------- */
+
+@-webkit-viewport{
+	width: device-width;
+	initial-scale: 1;
+}
+@-moz-viewport{
+	width: device-width;
+	initial-scale: 1;
+}
+// Due to a confirmed bug in IE Mobile 10 causing css viewport rules to report actual pixels as opposed to css pixels
+// source: http://nostrongbeliefs.com/why-i-think-we-shouldnt-use-css-viewport-in-ie10-for-now
+@media (max-width: 767px) {
+	@-ms-viewport{
+		width: device-width;
+		initial-scale: 1;
+	}
+}
+@-o-viewport{
+	width: device-width;
+	initial-scale: 1;
+}
+@viewport{
+	width: device-width;
+	initial-scale: 1;
+}
+
+body {
+	height: span(12);
+	padding: 0;
+	background: $color-background;
+	color: $color-text;
+	font-size: 87.5%;
+	font-family: $sans-serif;
+	line-height: 1.4;
+
+	@media (min-width: 480px) and (max-width: 767px) {
+		font-size: 90%;
+	}
+
+	html.enhanced & { visibility: visible; }
+}
+
+body,
+html {
+	height: 100%;
+}
+
+// Remove outline from focused elements
+*:focus {
+	outline: 0 none;
+}
+
+
+/* Links
+--------------------------------------------- */
+
+a {
+	@include generic-link();
+}
+
+nav a {
+	border-bottom: 0;
+}
+
+/* Basic elements
+--------------------------------------------- */
+
+blockquote {
+  @extend .blockquote;
+}
+
+/* Base typography
+--------------------------------------------- */
+
+
+h1, h2, h3, h4, h5, h6 {
+	font-family: Akkurat, sans-serif;
+	margin: .5em 0;
+	font-weight: bold;
+}
+
+h1 {
+	color: $color-pink;
+	@include CoopNew;
+	font-weight: normal;
+	font-size: em(30);
+	line-height: em(15);
+	margin: .5em 0;
+
+	+ time {
+		display: block;
+		margin: -1em 0 1em;
+
+		font-size: em(10);
+		color: $color-gray-7;
+		text-transform: uppercase;
+	}
+}
+h2,
+h3 {
+	font-weight: normal;
+	font-size: em(18);
+}
+h4 { font-size: .9em; }
+h5,
+h6 { font-size: 1em; }
+
+p {
+	font-family: Akkurat, sans-serif;
+	font-size: em(14);
+	margin: 1.5em 0;
+
+	&:first-child { margin-top: 0; }
+}
+
+h2 + p,
+h3 + p,
+h6 + p {
+	margin: 0 0 1.5em 0;
+}
+
+img {
+	width: auto;
+	height: auto;
+	max-width: span(12);
+}
+
+em { font-style: italic; }
+strong { font-weight: bold; }
+
+figure:first-child {
+	margin-bottom: 20px;
+	overflow: hidden;
+	position: relative;
+
+	img {
+		display: block;
+	}
+}
+
+.text-body {
+	margin: $gutter_px 0;
+
+	.fig-left {
+		float: left;
+		margin: 0 1em .5em 0;
+	}
+
+	.fig-right {
+		float: right;
+		margin: 0 0 .5em 1em;
+	}
+
+	figcaption {
+		margin-top: .5em;
+		font-size: em(11);
+		color: $color-gray-7;
+	}
+}
+
+.preamble {
+	font-size: em(16);
+}
+
+dt { font-weight: bold; }
+dd {
+	margin-left: 1em;
+	line-height: 1.5;
+
+	+ dt { margin-top: 1em; }
+}
+
+hr {
+	height: 0;
+	margin: $gutter_px 0;
+	border-style: solid;
+	border-width: 1px 0 1px;
+	border-color: #d7d8d4 transparent #fff;
+}
+
+/* Animations
+--------------------------------------------- */
+
+@-webkit-keyframes flashyellow {
+	0% { background-color: transparent; }
+	20% { background-color: $color-yellow; }
+	60% { background-color: $color-yellow; }
+	100% { background-color: transparent; }
+}
+@-moz-keyframes flashyellow {
+	0% { background-color: transparent; }
+	20% { background-color: $color-yellow; }
+	60% { background-color: $color-yellow; }
+	100% { background-color: transparent; }
+}
+@-ms-keyframes flashyellow {
+	0% { background-color: transparent; }
+	20% { background-color: $color-yellow; }
+	60% { background-color: $color-yellow; }
+	100% { background-color: transparent; }
+}
+@keyframes flashyellow {
+	0% { background-color: transparent; }
+	20% { background-color: $color-yellow; }
+	60% { background-color: $color-yellow; }
+	100% { background-color: transparent; }
+}
+
+.flashyellow {
+	@include prefixr(animation, flashyellow 2s ease-out normal);
+	@include prefixr(animation-iteration-count, 1);
+}
+
+@-webkit-keyframes fadein {
+	from { opacity: 0; }
+	to { opacity: 1; }
+}
+@-moz-keyframes fadein {
+	from { opacity: 0; }
+	to { opacity: 1; }
+}
+@-ms-keyframes fadein {
+	from { opacity: 0; }
+	to { opacity: 1; }
+}
+@keyframes fadein {
+	from { opacity: 0; }
+	to { opacity: 1; }
+}
+
+.fadein {
+	@include prefixr(animation, fadein 400ms ease-out normal);
+	@include prefixr(animation-iteration-count, 1);
+}
+
+/* Main sections
+--------------------------------------------- */
+
+/* Masthead */
+
+#masthead {
+	margin: 0 0 20px 0;
+	padding: 0;
+	background: #fff;
+	border-bottom: 1px solid #e5e5e5;
+
+	.group {
+		@extend .grid-wrapper;
+
+		position: relative;
+		padding-top: 15px;
+
+		@media (max-width: 939px) {
+			padding-left: 1em;
+			padding-right: 1em;
+		}
+	}
+}
+
+/* Main body content */
+
+#page {
+	@extend .grid-wrapper;
+
+	position: relative;
+	overflow: hidden;
+	padding: 0 1.2em;
+
+	@media (min-width: 940px) {
+		float: none;
+		clear: both;
+		padding: 0;
+	}
+}
+
+.wrapper {
+	@extend .border-box;
+
+	float: left;
+	width: 940px - ($hud-static-width + $gutter_px);
+
+	@media (max-width: 939px) {
+		width: 100%;
+		padding-right: $hud-width;
+
+		.no-boxsizing & { width: auto; }
+	}
+
+	@media (max-width: 274px) {
+		padding: 0;
+	}
+}
+
+.supplementary {
+	@media (min-width: 940px) {
+		clear: both;
+		margin-left: -20px;
+	}
+
+	@media (min-width: 480px) and (max-width: 767px) {
+		@include row;
+
+		.mod { border-left-width: 20px; }
+	}
+}
+
+/* Navigations
+--------------------------------------------- */
+
+nav a {
+	&, &:hover { text-decoration: none; }
+}
+
+#site-nav {
+	background: #fff;
+	clear: both;
+
+	h5 { @extend .visuallyhidden; }
+}
+
+#site-nav-main .horizontal-list {
+	padding-top: 15px;
+
+	li {
+		position: relative;
+
+		small {
+			color: $color-gray-7;
+		}
+
+		&.selected {
+			border-bottom: 1px solid $color-green-1;
+			margin-bottom: -1px;
+
+			a {
+				background: $color-green-1;
+				position: relative;
+
+				span {
+					color: $color-white;
+					text-shadow: 0 1px 0 rgba(0, 0, 0, 0.2);
+				}
+
+				small {
+					color: $color-green-3;
+				}
+
+				z-index: 0;
+			}
+
+			&:after {
+				border-top: 6px solid $color-green-1;
+				border-left: 7px solid transparent;
+				border-right: 7px solid transparent;
+				content: "";
+				display: block;
+				position: absolute;
+				left: 50%;
+				margin-left: -9px;
+				top: 100%;
+				height: 0;
+				z-index: 1;
+				width: 0;
+			}
+		}
+
+		@media (min-width: 940px) {
+			&:first-child + li:before {
+				@include icon($icons-sprite, "coop-online-bubble");
+
+				content: "";
+				right: 15px;
+				top: -40px;
+				position: absolute;
+				z-index: 1;
+			}
+		}
+	}
+
+	a {
+		color: $color-green-3;
+
+		&:hover {
+			background: $color-gray-8;
+			color: $color-text;
+
+			small {
+				color: $color-gray-7;
+			}
+		}
+	}
+
+	// Breakpoint XS-M (480 - 767)
+	@media (max-width: 767px) {
+		display: none;
+	}
+}
+
+#global-nav {
+	position: absolute;
+	width: 940px;
+	height: 0;
+	top: 1.1em;
+	left: 50%;
+	margin-left: -470px;
+
+	@include prefixr(transition, right .2s linear);
+
+
+	ul {
+		float: right;
+		padding-right: $hud-static-width;
+	}
+
+	li {
+		float: left;
+		margin-right: 7px;
+
+		&:before {
+			content: '|';
+			color: $color-gray-3;
+			margin-right: 7px;
+		}
+
+		&:first-child {
+			padding-left: 0;
+
+			&:before {
+				content: none;
+			}
+		}
+
+		.no-generatedcontent & {
+			margin-left: 1em;
+		}
+	}
+
+	a {
+		border: 0;
+		font-size: em(10);
+		line-height: 1;
+		color: $color-gray-7;
+
+		&:hover {
+			color: $color-green-1;
+			text-decoration: underline;
+		}
+
+		&.selected {
+			color: $color-green-3;
+		}
+	}
+
+	@media (min-width: 768px) and (max-width: 939px) {
+		width: auto;
+		margin-left: 0;
+		left: auto;
+		right: 1em;
+	}
+
+	@media (max-width: 767px) { display: none; }
+}
+
+#site-nav-sub {
+	@extend .border-box;
+
+	background: $color-white;
+	border-bottom: 1px solid #c9ccca;
+	margin-bottom: $gutter_px;
+	padding: 10px;
+
+	ul [aria-busy=true] {
+		@extend .loader-32;
+
+		display: none;
+		height: 32px;
+		padding: #{$gutter_px / 2} 0;
+
+		background-image: url(../graphics/loader-green-on-white.gif);
+	}
+
+	@media (min-width: 768px) {
+		.vertical-list {
+			li { display: none; }
+
+			.selected {
+				&, li { display: block; }
+			}
+
+			> .selected > {
+				a, span, button { display: none; }
+			}
+		}
+
+		.no-boxsizing & {
+			margin-left: $gutter_px;
+		}
+	}
+
+	@media (max-width: 274px) {
+		display: block !important;
+		visibility: visible !important;
+	}
+}
+
+#site-search {
+	position: relative;
+	top: 0;
+	left: 0;
+	float: right;
+	width: 208px;
+	margin: -40px 0 .5em 0;
+	z-index: 100;
+	@include prefixr(transition, left .2s linear);
+
+	@media (max-width: 767px) {
+		display: none;
+	}
+}
+
+#coop-logo {
+	border: none;
+	position: relative;
+	float: left;
+	font-size: 2em;
+	width: 132px;
+	height: 37px;
+	margin-bottom: 10px;
+	overflow: hidden;
+	color: transparent;
+
+	.fontface & img { display: none; }
+
+	.icon {
+		display: inline-block;
+		font-size: 124px;
+		line-height: 38px;
+		color: $color-green-1;
+		text-indent: 3px;
+	}
+}
+
+.trail li { display: inline; }
+
+// Product search
+#searchSuggest-result .category-list {
+
+	margin: -.1em 0 1em;
+	position: relative;
+	font-size: 1.2em;
+
+	[aria-busy=true] & {
+		color: $color-gray-3;
+
+		@include prefixr(transition, color .25s ease-out);
+	}
+
+	&[aria-hidden=true] { display: none; }
+
+	dd:after { top: -.1em; }
+}
+
+
+/* Forms
+--------------------------------------------- */
+
+label {
+	display: block;
+
+	font-size: 1em;
+	line-height: 1.8em;
+}
+
+input {
+	font-family: $sans-serif;
+	// Text inputs
+	&[type=text],
+	&[type=email],
+	&[type=search],
+	&[type=number],
+	&[type=password],
+	&[type=date] {
+		@extend .text-input;
+	}
+
+
+}
+
+input:disabled {
+  &[type=text],
+  &[type=email],
+  &[type=number],
+  &[type=password],
+  &[type=date] {
+    @extend .text-input-disabled;
+  }
+}
+
+textarea {
+	@extend .text-input;
+
+	overflow: hidden;
+	padding: em(10);
+	resize: vertical;
+}
+
+
+fieldset {
+	padding: 0;
+	border: 0;
+
+	/*> * {
+		margin: 0 .5em;
+		display: inline-block;
+	}*/
+}
+
+input[type=checkbox] {
+  /*
+	width: 2em;
+	height: 2em;
+	vertical-align: middle;
+  */
+
+  @extend .input-checkbox;
+}
+
+input[type=radio] {
+  @extend .input-radio;
+}
+
+/* Helpers
+--------------------------------------------- */
+
+// Clearing
+.clearfix:before,
+.clearfix:after { content: "\0020"; display: block; height: 0; overflow: hidden; }
+.clearfix:after { clear: both; }
+.clearfix { zoom: 1; }
+
+.group {
+	@extend .clearfix;
+}
+.error { color: #ED1B24; }
+
+// Very hidden and inaccessible
+.hidden { display: none; visibility: hidden; }
+.hide { display: none; }
+
+// Hidden but accessible
+.visuallyhidden { border: 0 !important; clip: rect(0 0 0 0); clip: rect(0, 0, 0, 0); height: 1px !important; margin: -1px !important; overflow: hidden; padding: 0 !important; position: absolute !important; width: 1px !important; }
+.visuallyhidden-focusable:active,
+.visuallyhidden-focusable:focus { clip: auto; height: auto; margin: 0; overflow: visible; position: static; width: auto; }
+.visual { border: 0; clip: rect(auto, auto, auto, auto); height: auto; margin: auto; overflow: auto; padding: inherit; position: inherit; width: auto; }
+
+// Visally hidden but still in flow
+.invisible { visibility: hidden; }
+.visible { visibility: visible; }
+
+// Offscreen positioning
+.offscreen { position: absolute; left: -5000em; }
+// Offscreen but still in flow
+.offscreen-invisible { position: relative; left: -5000em; }
+
+/* Mods */
+
+// Regular customer - stammis
+.regular-customer-mod {
+	@extend .white-basic-mod;
+
+	h2 {
+		background: sprite($icons-sprite, "heart");
+		background-repeat: no-repeat;
+		padding-left: sprite-width($icons-sprite, "heart") + 10px;
+		padding-bottom: 5px;
+		padding-top: 5px;
+	}
+
+	p {
+		margin: 5px 0 0 0;
+
+		a {
+			color: $color-green-3;
+		}
+	}
+
+	.not-regular {
+		h2 {
+			background: none;
+			padding: 0;
+		}
+
+		p {
+			margin-bottom: 1em;
+			color: $color-blue-1;
+			@include CoopNew;
+			font-size: em(16);
+			text-align: center;
+
+			b {
+				color: $color-blue-2;
+				display: block;
+				font-weight: normal;
+				font-size: em(32, 16);
+			}
+		}
+
+		.btn {
+			@extend .btn-theme-brown;
+
+			margin: 0 auto;
+			width: 160px;
+			font-size: 1em;
+		}
+	}
+
+	.regular {
+		.proxy {
+			border: 0;
+			padding: 0;
+			@include generic-link();
+
+			background: transparent;
+			cursor: pointer;
+			font-size: em(12);
+		}
+	}
+}
+
+/* Coop CMS Editors styles
+--------------------------------------------- */
+/* Images */
+img.contentPicture { clear: both; display: block; }
+img.leftContentPicture { float: left; padding: 0.25em 1.5em 0 0; }
+img.rightContentPicture { float: right; padding: 0.25em 0 0 1.5em; }
+
+/* Tables */
+table.recept tr td { width: 124px; padding-right: 20px; }
+table.recept tr td p { margin: 0.3em 0 0.1em 0; }
+
+/* Forms
+--------------------------------------------- */
+.xFormWrapper {
+	@extend .generic-form;
+
+	tr:first-child td > span {
+		margin-top: 0;
+	}
+
+	td > span {
+		display: block;
+		font-weight: bold;
+		margin-top: $gutter_px;
+	}
+
+	fieldset br { display: none; }
+}
+
+.feedback-form {
+	@extend .generic-form;
+
+	padding: 0;
+	margin-bottom: 25px;
+
+	input,
+	textarea {
+		display: block;
+		margin-bottom: 10px;
+		max-width: none;
+	}
+
+	textarea {
+		height: 150px;
+	}
+
+	.author {
+		font-weight: bold;
+		line-height: 1.2em;
+		min-height: 43px;
+		padding-left: 53px;
+		padding-top: 5px;
+		position: relative;
+
+		img {
+			height: 43px;
+			left: 0;
+			position: absolute;
+			top: 0;
+			width: 43px;
+		}
+	}
+
+	&.feedback-form-no-comments {
+		border-bottom: none;
+		margin-bottom: 0;
+	}
+
+	.btn { margin: 1em 0; }
+}
+
+a#iframe-login {
+	@extend .loader-32;
+
+	display: block;
+	height: 32px;
+	border: 0;
+
+	overflow: hidden;
+	text-indent: -9999px;
+	background-image: url(../graphics/loader-green-on-white.gif);
+}
+
+.feedback-mod {
+	.response.admin {
+		margin-left: .5em;
+	}
+}
+
+.blog-header {
+	@extend .vertical-flexbox;
+
+	height: 73px;
+	margin: 10px 0 $gutter_px;
+	padding-left: 117px;
+
+	position: relative;
+
+	background: $color-turquoise sprite($icons-sprite, "mersmak", 16px, 8px);
+	background-repeat: no-repeat;
+	text-transform: uppercase;
+	color: darken($color-turquoise, 30%);
+	font-size: em(16);
+
+	-webkit-font-smoothing: antialiased;
+
+	&:after {
+		height: 6px;
+		width: 100%;
+
+		position: absolute;
+		left: 0;
+		bottom: 0;
+
+		content: "";
+		background: url(../graphics/dot-wave-inverted.png) 0 0 repeat-x;
+	}
+
+	&:before {
+		@include icon($icons-sprite, "fork");
+
+		position: absolute;
+		right: 20px;
+		bottom: 0;
+
+		content: "";
+	}
+
+	span {
+		display: block;
+		padding: .5em 0 .5em 1em;
+		border-left: 1px solid #acd7d5;
+	}
+
+	@media (max-width: 599px) {
+		span { display: none; }
+	}
+}

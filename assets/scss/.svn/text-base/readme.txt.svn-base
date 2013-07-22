@@ -1,0 +1,35 @@
+BREAKPOINTS:
+The main breakpoints (media queries) for the responsiveness of the design. Pulled into screen.scss and merged into screen.css.
+
+_base.scss:
+Base include for SCSS-files, included variables and mixins but adds no CSS-output.
+
+_mixins.scss:
+SASS-specific function includes and utility functions.
+
+_variables.scss:
+Variables for colors, typography etc used in all stylesheets that includes the _base.scss.
+
+_global.scss:
+Styles that are generic and used across ALL breakpoints.
+
+_patterns.scss:
+Reusable, object-oriented inspired styles for navigations, lists, form-elements, module blocks etc. Extended and borrowed (with SASS @extend) by in all files.
+
+_reset.scss:
+Basic reset that normalizes all browsers.
+
+_scaffolding.scss:
+Contains styles and SASS-utility functions for layout and grids. Also contains layout groups; reusable layout patterns.
+
+screen.scss:
+File tha merges all relevant styles (_global.scss, _scaffolding.scss etc) and outputs a single screen.css file.
+
+basic.scss:
+Basic foundation styles for the Basic experience (http://github.com/filamentgroup/EnhanceJS); for those that passes the basic capability tests.
+
+ie.scss:
+Specific fixes for the less capable.
+
+print.scss:
+Styles for the media print.

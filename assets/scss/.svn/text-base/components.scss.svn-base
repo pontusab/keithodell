@@ -1,0 +1,77 @@
+@import 'base';
+
+/* ASSET CONTAINER
+ * Used in component lib
+*/
+[id^=comp-],
+[id^=layout-] {
+	@include clearfix;
+	margin-bottom: 20px;
+
+	position: relative;
+}
+
+#components {
+
+	> section {
+		border-bottom: 1px solid #e0e0e0;
+
+		> header {
+			padding-left: 20px;
+
+			h2 {
+				font-size: 3em;
+			}
+		}
+	}
+
+	.intro {
+		padding: 0 2em;
+	}
+
+	#components-toc {
+		padding: 0 2em;
+		font-size: 90%;
+
+		ul {
+			padding: 0;
+		}
+		> div {
+			float: left;
+			margin-right: 2em;
+		}
+	}
+}
+
+$component-padding: 1.15em;
+
+.component {
+	padding: 2em $component-padding 3em $component-padding;
+	margin-bottom: 1.15em;
+	overflow: hidden;
+	background: #fff;
+
+	> header {
+		margin-top: -1em;
+
+		h3 {
+			margin: 0 0 1em 0;
+			padding-bottom: .5em;
+			border-bottom: 1px solid #e0e0e0;
+			color: #013466;
+		}
+	}
+
+	.component-info {
+		font-size: .9em;
+		color: #555;
+	}
+
+	&.transparent {
+		background: transparent;
+	}
+}
+
+.asset-fullwidth {
+	margin: 0 -$component-padding;
+}

@@ -1,0 +1,10 @@
+@import "compass/utilities/sprites";
+
+// Icons sprite
+$icons-sprite: sprite-map("../graphics/sprites/icons/*.png", $spacing: 50);
+
+// Form sprite
+$form-sprite: sprite-map("../graphics/sprites/form/*.png", $spacing: 50);
+
+// Ratings sprite
+$rating-sprite: sprite-map("../graphics/sprites/rating/*.png");

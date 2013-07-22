@@ -1,0 +1,28 @@
+@function em($target, $context: $base_font_size) {
+	@return ($target / $context) + 0em;
+}
+
+@function sprite-height($map, $sprite) {
+  $sprite-file: sprite-file($map, $sprite);
+
+  @return image-height($sprite-file);
+}
+
+@function sprite-width($map, $sprite) {
+  $sprite-file: sprite-file($map, $sprite);
+
+  @return image-width($sprite-file);
+}
+
+
+// Function that returns a specific glyph icon unicode character index
+// Example: content: glyphicon(truck)
+@function glyphicon ($name) {
+	@for $i from 1 to length($glyph-names) {
+		$glyph-name: nth($glyph-names, $i);
+
+		@if $name == $glyph-name {
+			@return nth($glyph-characters, $i);
+		}
+	}
+}
