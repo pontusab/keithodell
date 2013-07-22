@@ -11,7 +11,7 @@
 						<div class="block">
 							<a href="story.php">
 								<div class="vignette"></div>
-								<img src="assets/tmp/storie1.jpg">
+								<img src="/assets/tmp/storie1.jpg">
 							
 								<div class="content">
 									<h2>International Chocolate</h2>
@@ -28,7 +28,7 @@
 						<div class="block">
 							<a href="story.php">
 								<div class="vignette"></div>
-								<img src="assets/tmp/storie2.jpg">
+								<img src="/assets/tmp/storie2.jpg">
 							
 								<div class="content">
 									<h2>International Chocolate</h2>
@@ -45,8 +45,7 @@
 						<div class="block">
 							<a href="story.php">
 								<div class="vignette"></div>
-								<img src="assets/tmp/storie3.jpg">
-							
+								<img src="/assets/tmp/storie3.jpg">
 								<div class="content">
 									<h2>International Chocolate</h2>
 									<div class="meta">
@@ -62,7 +61,7 @@
 						<div class="block">
 							<a href="story.php">
 								<div class="vignette"></div>
-								<img src="assets/tmp/storie4.jpg">
+								<img src="/assets/tmp/storie4.jpg">
 							
 								<div class="content">
 									<h2>International Chocolate</h2>
@@ -79,7 +78,7 @@
 						<div class="block">
 							<a href="story.php">
 								<div class="vignette"></div>
-								<img src="assets/tmp/storie5.jpg">
+								<img src="/assets/tmp/storie5.jpg">
 							
 								<div class="content">
 									<h2>International Chocolate</h2>
@@ -96,7 +95,7 @@
 						<div class="block">
 							<a href="story.php">
 								<div class="vignette"></div>
-								<img src="assets/tmp/storie6.jpg">
+								<img src="/assets/tmp/storie6.jpg">
 							
 								<div class="content">
 									<h2>International Chocolate</h2>
@@ -113,7 +112,7 @@
 						<div class="block">
 							<a href="story.php">
 								<div class="vignette"></div>
-								<img src="assets/tmp/storie7.jpg">
+								<img src="/assets/tmp/storie7.jpg">
 							
 								<div class="content">
 									<h2>International Chocolate</h2>
@@ -130,7 +129,7 @@
 						<div class="block">
 							<a href="story.php">
 								<div class="vignette"></div>
-								<img src="assets/tmp/storie8.jpg">
+								<img src="/assets/tmp/storie8.jpg">
 							
 								<div class="content">
 									<h2>International Chocolate</h2>
@@ -147,7 +146,7 @@
 						<div class="block">
 							<a href="story.php">
 								<div class="vignette"></div>
-								<img src="assets/tmp/storie9.jpg">
+								<img src="/assets/tmp/storie9.jpg">
 							
 								<div class="content">
 									<h2>International Chocolate</h2>
@@ -164,7 +163,7 @@
 						<div class="block">
 							<a href="story.php">
 								<div class="vignette"></div>
-								<img src="assets/tmp/storie10.jpg">
+								<img src="/assets/tmp/storie10.jpg">
 							
 								<div class="content">
 									<h2>International Chocolate</h2>
@@ -181,7 +180,7 @@
 						<div class="block">
 							<a href="story.php">
 								<div class="vignette"></div>
-								<img src="assets/tmp/storie11.jpg">
+								<img src="/assets/tmp/storie11.jpg">
 							
 								<div class="content">
 									<h2>International Chocolate</h2>
@@ -198,7 +197,7 @@
 						<div class="block">
 							<a href="story.php">
 								<div class="vignette"></div>
-								<img src="assets/tmp/storie12.jpg">
+								<img src="/assets/tmp/storie12.jpg">
 							
 								<div class="content">
 									<h2>International Chocolate</h2>
@@ -242,4 +241,5 @@
 </script>
 
 <script type="text/javascript" src="/assets/js/vendors/googlemaps.js"></script>
+
 <?php include 'components/footer.php'; ?>

@@ -11,7 +11,7 @@
     <link rel="apple-touch-icon" sizes="114x114" href="/assets/img/apple-touch-icon-iphone-retina-display.png" />
 	<link href='http://fonts.googleapis.com/css?family=Libre+Baskerville:400,400italic' rel='stylesheet' type='text/css'>
 	<link href='http://fonts.googleapis.com/css?family=Montserrat:700' rel='stylesheet' type='text/css'>
-	<link rel="stylesheet" href="assets/css/screen-min.css?v=1" />
+	<link rel="stylesheet" href="/assets/css/screen-min.css?v=1" />
 </head>
 	<html>
 		<body class="preload">

@@ -39,6 +39,12 @@ $default-prefixes: 3px;
 	filter: alpha(opacity=#{$opacity * 100});
 }
 
+@mixin ios-render-fix() {
+	-webkit-backface-visibility: hidden;
+	-webkit-transform-style: preserve-3d;
+	-webkit-transform: translate3d(0,0,0);
+}
+
 @mixin clearfix() {
 	.clearfix:before,
 	.clearfix:after {

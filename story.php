@@ -13,6 +13,7 @@
 			<div class="vignette"></div>
 			<ul class="slides">
 				<li>
+<<<<<<< HEAD
 					<img src="assets/tmp/storie1.jpg"/>
 				</li>
 				<li>
@@ -26,6 +27,21 @@
 				</li>
 				<li>
 					<img src="assets/tmp/storie5.jpg"/>
+=======
+					<img src="http://keith.pontusab.se/assets/tmp/storie1.jpg"/>
+				</li>
+				<li>
+					<img src="http://keith.pontusab.se/assets/tmp/storie2.jpg"/>
+				</li>
+				<li>
+					<img src="http://keith.pontusab.se/assets/tmp/storie3.jpg"/>
+				</li>
+				<li>
+					<img src="http://keith.pontusab.se/assets/tmp/storie4.jpg"/>
+				</li>
+				<li>
+					<img src="http://keith.pontusab.se/assets/tmp/storie5.jpg"/>
+>>>>>>> e01cd128ce227eeb0b934e1f27bb0da598ff5981
 				</li>
 			</ul>
 		</div>
@@ -67,9 +83,15 @@
 			</div>
 
 			<div class="share">
+<<<<<<< HEAD
 				<div class="fb"></div>
 				<div class="gp"></div>
 				<div class="tw"></div>
+=======
+				<a href="#" class="fb"></a>
+				<a href="#" class="gp"></a>
+				<a href="#" class="tw"></a>
+>>>>>>> e01cd128ce227eeb0b934e1f27bb0da598ff5981
 			</div>
 		</div>
 

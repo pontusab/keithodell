@@ -3,19 +3,19 @@ $start = true;
 include 'components/header.php'; 
 ?>
 <div class="home flexslider">
-
 	<div class="intro">
 		<div class="inner">
 			<div class="profile">
+
 				<div class="avatar">
 					<img src="assets/tmp/avatar.png" />
 				</div>
-				<div class="description">
-					
-					<div class="name">
-						<h2>Keith O'dell</h2>
-					</div>
 
+				<div class="name">
+					<h2>Keith O'dell</h2>
+				</div>
+
+				<div class="description">
 					<small>chief, traveler and food lover</small>
 				</div>
 			</div>
@@ -25,20 +25,19 @@ include 'components/header.php';
 				It was popularised in the 1960s with the release of Letraset sheets containing.
 			</p>
 			<a href="/story-map.php" class="btn">My stories</a> 
-
 		</div>
 	</div>
 
 	<div class="vignette"></div>
 	<ul class="slides">
 		<li>
-			<img src="assets/tmp/slide1.jpg" />
+			<img src="/assets/tmp/slide1.jpg" />
 		</li>
 		<li>
-			<img src="assets/tmp/slide2.jpg" />
+			<img src="/assets/tmp/slide2.jpg" />
 		</li>
 		<li>
-			<img src="assets/tmp/slide3.jpg" />
+			<img src="/assets/tmp/slide3.jpg" />
 		</li>
 	</ul>
 

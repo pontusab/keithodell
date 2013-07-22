@@ -46,7 +46,6 @@ h1 {
 
 .innerwrapper {
 	position: absolute;
-
 	&.closed {
 		position: fixed;
 		-webkit-transition-duration: 200ms;
@@ -69,6 +68,8 @@ h1 {
 	min-height: 100%;
 	left: -260px;
 	background: #eae4d6;
+
+	@extend .clearfix;
 	z-index: 1;
 	bottom: 0;
 	top: 0;
@@ -103,6 +104,15 @@ h1 {
 		&:hover,
 		&:focus {
 			background: #c5bfb3;
+			padding: 15px;
+			color: #fff;
+			display: block;
+			text-decoration: none;
+
+			&:hover,
+			&:active {
+				background: #c5bfb3;
+			}
 		}
 	}
 }
@@ -155,11 +165,25 @@ h1 {
 }
 
 
+.stories {
+	.map {
+		height: 100%;
+		width: 100%;
+		position: absolute;
+		.control {
+			display: none;
+		}
+	}
+}
+
 #story {
 	position: static;
 	.content-1,
 	.content-2 {
 		width: 100%;
+	}
+	.content-1 {
+		top: 65px;
 	}
 
 	.controllers {
@@ -168,6 +192,9 @@ h1 {
 
 	.content {
 		padding: 20px 20px;
+		transition-delay: 0.2s;
+		-webkit-transition-delay: 0.2s;
+		@include ios-render-fix();
 	}
 
 	.content-2 {
@@ -188,6 +215,9 @@ h1 {
 	}
 }
 
+.list {
+	display: none;
+}
 .page {
 	.images {
 		display: none;
@@ -196,6 +226,10 @@ h1 {
 	.head {
 		width: 80%;
 		padding: 20px 0 30px 0;
+
+		transition-delay: 0.1s;
+		-webkit-transition-delay: 0.1s;
+		@include ios-render-fix();
 	}
 
 	.form {
@@ -217,5 +251,6 @@ h1 {
 	.container {
 		margin: 0;
 		padding-top: 80px;
+		padding-bottom: 20px;
 	}
 }
